@@ -1,0 +1,28 @@
+
+#titulo {
+    text-align: center;
+    margin: 40px 0px 0px 0px;
+    
+  }
+#opciones {
+    text-align: center;
+    
+    
+  }
+#portafolio {
+    text-align: center;
+    margin: 30px 0px 0px 0px;
+    
+  }
+#autor {
+    
+    width: 500px;
+    position:absolute; 
+    top: 200px; left:0; right:0; bottom:0; 
+    margin:auto;
+  }
+
+  #insta{
+    margin: 20px 0px 0px 0px;
+    
+  }
