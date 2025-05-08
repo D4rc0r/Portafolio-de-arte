@@ -1,117 +1,598 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <script src="scripts.js"></script>
-    <link href="styles.css" rel="stylesheet">
-    <title>Document</title>
+    <title>ElArteBajoTierra</title>
+    <script>
+        let randnum = (Math.random() * 100) + 1;
+        let answer = parseInt(randnum)
+
+        function start() {
+            var titulo = document.getElementById("title");
+            var principal = document.getElementById("main");
+            titulo.style.visibility = "hidden";
+            principal.style.visibility = "visible";
+        }
+        function ShowPortafolio() {
+            var container = document.getElementsByClassName("portafolio")[0];
+            var container2 = document.getElementsByClassName("Statement")[0];
+            container.style.visibility = "visible";
+            container2.style.visibility = "hidden";
+        }
+
+        function ShowStatement() {
+            var container = document.getElementsByClassName("Statement")[0];
+            var container2 = document.getElementsByClassName("portafolio")[0];
+            container.style.visibility = "visible";
+            container2.style.visibility = "hidden";
+        }
+    </script>
+    <style>
+        /* This is the style of the body element */
+        body {
+
+            font-family: Georgia, serif;
+            background: black url(smoke.png);
+            background-size: 100% 100%;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        #title {
+            /*visibility: hidden;*/
+
+            margin: 4vh 4vw;
+            padding: 4vw 4vh;
+            border: 0.2vh solid black;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            background: rgba(40, 40, 54, 0.5);
+            text-transform: uppercase;
+            height: 75vh;
+
+        }
+
+
+
+        #title1 {
+            position: relative;
+            top: 12vh;
+            font-size: 4vw;
+            font-size: 4vh;
+        }
+
+        #subtitle {
+            text-align: left;
+            position: relative;
+            top: -17vh;
+            left: 7vh;
+            font-size: 2vw;
+            font-size: 2vh;
+        }
+
+        #main {
+            visibility: hidden;
+            margin: 4vh 4vw;
+            padding: 4vw 4vh;
+            border: 0.2vh solid black;
+            display: grid;
+            place-items: center;
+
+            color: rgb(255, 255, 255);
+            background: rgba(40, 40, 54, 0.5);
+            /*text-transform: uppercase;*/
+            position: absolute;
+            top: 0;
+            height: 75vh;
+            width: 84vw;
+            /*width: 85vw;*/
+
+        }
+
+        .portafolio {
+            visibility: hidden;
+            overflow-y: scroll;
+            /* Habilita el scroll vertical */
+            margin: 8vh 4vw;
+            padding: 4vw 4vh;
+            display: grid;
+            place-items: center;
+            background: rgba(40, 40, 54, 0);
+            position: absolute;
+            top: 0;
+            height: 65vh;
+            width: 84vw;
+        }
+
+        .Statement {
+            /* Habilita el scroll vertical */
+            margin: 8vh 4vw;
+            padding: 4vw 4vh;
+            display: grid;
+            position: absolute;
+            top: 0;
+            color: rgb(0, 0, 0);
+            background: rgba(255, 255, 255, 0.5);
+            height: 58vh;
+            width: 38vw;
+            font-size: 1.1vw;
+        }
+
+        .text-cell {
+            position: relative;
+            top: -13vh;
+
+        }
+
+        .aboutImg {
+
+            color: rgb(0, 0, 0);
+            background: rgba(255, 255, 255, 0.5);
+            font-size: 1vw;
+            margin: 3vw;
+            padding: 2vw 2vh;
+        }
+
+        #aboutImg1 {
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            position: relative;
+            top: 10vh;
+            width: 10vw;
+
+
+
+        }
+
+        #aboutImg2 {
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            position: relative;
+            top: 10vh;
+            width: 10vw;
+
+
+        }
+
+        #aboutImg3 {
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            position: relative;
+            top: 10vh;
+            width: 10vw;
+
+
+        }
+
+        #aboutImg4 {
+
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            position: relative;
+            top: 11vh;
+            width: 10vw;
+        }
+
+        #aboutImg5 {
+
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            position: relative;
+            top: 11vh;
+            width: 10vw;
+        }
+
+        #aboutImg6 {
+
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            position: relative;
+            top: 11vh;
+            width: 10vw;
+        }
+
+        #aboutImg7 {
+
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            position: relative;
+            top: 11vh;
+            width: 10.8vw;
+        }
+
+        .descripcion {
+            display: flex;
+            justify-content: right;
+            /* Centra horizontalmente */
+            align-items: center;
+            position: relative;
+            top: 0vh;
+
+            font-size: 0.7vw;
+            font-style: oblique;
+            color: rgb(255, 255, 255);
+        }
+
+        #opciones {
+            font-size: 0.2 vw;
+            position: absolute;
+            top: 1vh;
+            place-items: center;
+        }
+
+        #button {
+            position: relative;
+
+            border: 0.1vh solid black;
+            font-size: 1.7vw;
+            background: rgba(40, 40, 54, 0.7);
+
+            border-radius: 40px;
+            color: rgb(255, 255, 255);
+            margin-right: 5vw;
+        }
+
+
+        img {
+            width: 40vw;
+            height: auto;
+            object-fit: contain;
+
+        }
+    </style>
 </head>
+
 <body>
-    <div id="titulo" class="topdiv">
-        <h1> Portafolio de Arte</h1>
-        <p class="subtitle"> <b><em>Ivan Dario Coral </em> </b></p>
+    <!-- the title screen -->
+
+    <div class="box" id="title" onclick="return start()">
+
+        <a id="title1"><br><big><big>Portafolio de arte</big></big> </a>
+
+        <p id="subtitle"><big>Ivan Dario Coral</big></p>
     </div>
 
-    <div id="opciones" class="options">
-        <button id="buttonShow" class="btnprmry" onclick="ShowPortafolio()">
-            Portafolio
-        </button>
-        <button id="buttonShow" class="btnprmry" onclick="ShowAutor()">
-            Statement
-        </button>
-    </div>
-    <img id = fondo style="display: scroll; position: fixed; top: 0px; right: 1050px" src="FondoI.JPG" width="250px">
-    <img id = fondo style="display: scroll; position: fixed; top: 0px; left: 1050px" src="FondoD.JPG" width="250px">
-    
+    <!-- the game screen -->
+    <div class="box" id="main">
+        <div id="opciones" class="options">
+            <a id="button" onclick="return ShowPortafolio()">Portafolio</a>
 
-    <div id= portafolio class = "portafolio">
-        <div>
-            <img src = "DSCF8500.JPG" width="500px">
-        </div>
-        <div>
-            <img src = "DSCF8503.JPG" width="500px">
-        </div>
-        <div>
-            <img src = "DSCF8540.JPG" width="500px">
-        </div>
-        <div>
-            <img src = "DSCF8538.JPG" width="500px">
-        </div>
-        <div>
-            <img src = "DSCF8536.JPG" width="500px">
-        </div>
-        <div>
-            <img src = "DSCF8535.JPG" width="500px">
-        </div>
-        <div>
-            <img src = "DSCF8516.JPG" width="500px">
-        </div>
-        <div>
-            <img src = "DSCF8515.JPG" width="500px">
-        </div>
-        <div>
-            <img src = "DSCF8514.JPG" width="500px">
-        </div>
-        <div>
-            <img src = "DSCF8511.JPG" width="500px">
-        </div>
-        <div>
-            <img src = "DSCF8510.JPG" width="500px">
-        </div>
-        <div>
-
-            <img src = "CantodelSapo.png" width="500px">
-
-        </div>
-        <div>
-            <img src = "ColorNaturaleza.png" width="500px">
+            <a id="button" onclick="return ShowStatement()">Statement </a>
         </div>
 
-        <div>
-            <img src = "Identidad.png" width="500px">
+        <div class="portafolio">
+            <table>
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutImg1" class="aboutImg">
+                            Especies que no solo habitan el territorio sino también en
+                            la memoria de quienes las admiramos
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="Imagenes\DSCF8500.JPG" alt="Imagen 1">
+                        <p id="descripcion1" class="descripcion"> Pholis, grabado en punta seca 20x20cm, Manizales 2025,
+                            de la serie
+                            Raíces y Esencia</p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutImg1" class="aboutImg" style="display: none;">
+                            Especies que no solo habitan el territorio sino también en
+                            la memoria de quienes las admiramos
+                        </div>
+                    </td><!-- 1,3-->
+                </tr>
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutImg2" class="aboutImg" style="display: none;">
+                            Estas obras son
+                            una muestra de la biodiversidad buscando que la
+                            naturaleza florezca en las personas y en sus acciones
+                            porque si las cuidamos podemos preservarlas, así como
+                            nuestras raíces y esencia
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="Imagenes\DSCF8503.JPG" alt="Imagen 2">
+                        <p id="descripcion2" class="descripcion"> Buteo, grabado en punta seca 20x20cm, Manizales 2025,
+                            de la serie
+                            Raíces y Esencia</p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutImg2" class="aboutImg">
+                            Estas obras son
+                            una muestra de la biodiversidad buscando que la
+                            naturaleza florezca en las personas y en sus acciones
+                            porque si las cuidamos podemos preservarlas, así como
+                            nuestras raíces y esencia
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+                
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutImg3" class="aboutImg" style="display: none;">
+                            Estas obras son
+                            una muestra de la biodiversidad buscando que la
+                            naturaleza florezca en las personas y en sus acciones
+                            porque si las cuidamos podemos preservarlas, así como
+                            nuestras raíces y esencia
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="Imagenes\DSCF8982.JPG" alt="Imagen 2">
+                        <p id="descripcion2" class="descripcion"> Aglaia, grabado en punta seca 20x20cm, Manizales 2025,
+                            de la serie
+                            Raíces y Esencia</p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutImg3" class="aboutImg" style="display: none;">
+                            Estas obras son
+                            una muestra de la biodiversidad buscando que la
+                            naturaleza florezca en las personas y en sus acciones
+                            porque si las cuidamos podemos preservarlas, así como
+                            nuestras raíces y esencia
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                            Poner aqui el texto de la obra
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="Imagenes\ColorNaturaleza.png" alt="Imagen 2">
+                        <p id="descripcion2" class="descripcion"> Identidad, grabado en punta seca 20x20cm, Manizales
+                            2025, de la serie
+                            Territorio Ancestral</p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                            Poner aqui el texto de la obra
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutImg6" class="aboutImg">
+                            Esta obra de carácter efímero está inspirada en el mundo de la tierra
+                            (Pachamama) haciendo uso de la imagen de una lagartija plasmada en la
+                            pared con tintas naturales para mostrar la fragilidad de los seres que la
+                            habitan y generar conciencia alrededor de ellos.
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="Imagenes\Tierra.jpg" alt="Imagen 2">
+                        <p id="descripcion2" class="descripcion"> Tierra, Stencil de 70*50 Plasmado con tintas naturales
+                            en el Palacio de Bellas Artes,<br>
+                            Manizales 2025, de la serie
+                            Territorio Ancestral</p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutImg6" class="aboutImg" style="display: none;">
+                            Esta obra de carácter efímero está inspirada en el mundo de la tierra
+                            (Pachamama) haciendo uso de la imagen de una lagartija plasmada en la
+                            pared con tintas naturales para mostrar la fragilidad de los seres que la
+                            habitan y generar conciencia alrededor de ellos.
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+                
+               
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutImg4" class="aboutImg">
+                            Colombia un país biodiverso, posee una
+                            cantidad impresionante de criaturas que desde el
+                            inicio de los tiempos han tomado un papel espiritual,
+                            para forjar nuestras culturas, en esta obra se plasma la
+                            anaconda recordando esos patrones encontrados en
+                            la estética precolombina y como remembranza a
+                            nuestras antiguas creencias.
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="Imagenes\Identidad.png" alt="Imagen 2">
+                        <p id="descripcion2" class="descripcion"> Identidad, grabado en punta seca 20x20cm, Manizales
+                            2025, de la serie
+                            Territorio Ancestral</p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutImg4" class="aboutImg" style="display: none;">
+                            Colombia un país biodiverso, posee una
+                            cantidad impresionante de criaturas que desde el
+                            inicio de los tiempos han tomado un papel espiritual,
+                            para forjar nuestras culturas, en esta obra se plasma la
+                            anaconda recordando esos patrones encontrados en
+                            la estética precolombina y como remembranza a
+                            nuestras antiguas creencias.
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                            El jaguar es un animal místico y ancestral cargado de simbología y
+                            conocimiento transmitido por tradición oral desde antiguas generaciones, en
+                            alusión a las manchas tan características que posee, surge esta pieza en un
+                            intento por transmitir esa magia escondida detrás de este ser.
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="Imagenes\Ilusion.jpg" alt="Imagen 2">
+                        <p id="descripcion2" class="descripcion"> Identidad, grabado en punta seca 20x20cm, Manizales
+                            2025, de la serie
+                            Territorio Ancestral</p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutImg5" class="aboutImg">
+                            El jaguar es un animal místico y ancestral cargado de simbología y
+                            conocimiento transmitido por tradición oral desde antiguas generaciones, en
+                            alusión a las manchas tan características que posee, surge esta pieza en un
+                            intento por transmitir esa magia escondida detrás de este ser.
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+                
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutImg7" class="aboutImg">
+                            En la obra convergen las técnicas clásicas como el grabado y técnicas
+                            nuevas como el procesamiento digital de imágenes, es el encuentro de una
+                            práctica contemporánea con la simbología que recuerda a nuestros ancestros en el contexto de
+                            la cultura de
+                            Nariño <br><br>
+                            Ellos plasmaron en su obra símbolos geométricos y sus
+                            imágenes se diferencian por los periodos a los que corresponden (Piartal,
+                            Tuza, Capulí), aunque algunas piezas de cerámica conservan ciertas
+                            características, en sus diseños utilizan figuras Antropomórficas Zoomórficas
+                            o Fito mórficas, de acuerdo con sus costumbres culturales la flora y fauna
+                            que los rodeaban.
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="Imagenes\Encuentro.jpg" alt="Imagen 2">
+                        <p id="descripcion2" class="descripcion"> Identidad, grabado en punta seca 20x20cm, Manizales
+                            2025, de la serie
+                            Territorio Ancestral</p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutImg7" class="aboutImg">
+                            Esta propuesta es una reinterpretación de los discos
+                            giratorios protopastos como homenaje a los indígenas de la Amazonia y de
+                            Nariño, pues las piezas precolombinas encontradas en este territorio
+                            presentan figuras geométricas concéntricas y al mono como elemento
+                            compositivo, el concepto del mono que ellos tenían era de mucho respeto
+                            por la similitud que tienen con los seres humanos y es el ejemplo directo
+                            para entender nuestro origen y saber que todos los seres somos iguales y
+                            que en esas variaciones que presentamos entre especies, está la clave para
+                            entender la naturaleza.
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                            Poner aqui el texto de la obra
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="Imagenes\CantodelSapo.png" alt="Imagen 2">
+                        <p id="descripcion2" class="descripcion"> Identidad, grabado en punta seca 20x20cm, Manizales
+                            2025, de la serie
+                            Territorio Ancestral</p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                            Poner aqui el texto de la obra
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                            El jaguar es un animal místico y ancestral cargado de simbología y
+                            conocimiento transmitido por tradición oral desde antiguas generaciones, en
+                            alusión a las manchas tan características que posee, surge esta pieza en un
+                            intento por transmitir esa magia escondida detrás de este ser.
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="Imagenes\Renacer.jpg" alt="Imagen 2">
+                        <p id="descripcion2" class="descripcion"> Identidad, grabado en punta seca 20x20cm, Manizales
+                            2025, de la serie
+                            Territorio Ancestral</p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                            El jaguar es un animal místico y ancestral cargado de simbología y
+                            conocimiento transmitido por tradición oral desde antiguas generaciones, en
+                            alusión a las manchas tan características que posee, surge esta pieza en un
+                            intento por transmitir esa magia escondida detrás de este ser.
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+                
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                            Poner aqui el texto de la obra
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="Imagenes\Fotograma.jpg" alt="Imagen 2">
+                        <p id="descripcion2" class="descripcion"> Identidad, grabado en punta seca 20x20cm, Manizales
+                            2025, de la serie
+                            Territorio Ancestral</p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                            Poner aqui el texto de la obra
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+            </table>
         </div>
-
-        <div>
-            <img src = "Ilusion.jpg" width="500px">
-        </div>
-
-    
-        <div>
-            
-            <img src = "Encuentro.jpg" width="500px">
-
-        </div>
-        
-        
-        <div>
-            <img src = "Renacer.jpg" width="500px">
-
-        </div>
-        <div>
-            <img src = "Lagartija.png" width="500px">
-
-        </div>
-        <div>
-            <img src = "rata.jpg" width="500px">
-
-        </div>
-
-    </div>
-    <div id= autor class = "infoautor"  style="visibility: hidden">
-        <h3> Los animales como mensajeros de los dioses </h3> En un intento por explicar nuestro origen, el ser humano ha construido su identidad desde las visiones y memorias en relación con los dioses y los animales han sido grandes protagonistas, los vínculos que teníamos con los demás seres vivos se han ido perdiendo, olvidando que somos parte esencial del ciclo de la tierra, así que es necesario reflexionar sobre nuestro comportamiento, a ella le debemos todo lo que somos y en su protección hallamos nuestra propia armonía, el hombre ha considerado que los animales tienen un fuerte vinculo con la espiritualidad, guiando y mostrando caminos de consciencia, recordemos que la naturaleza y su biodiversidad también sienten, comprendamos su importancia y reflexionemos sobre nuestro actuar con la Pachamama y la necesidad de volver a ella, porque la vida se defiende y las artes abren camino, hacia el corazón, hacia la tierra 
-        
-        <div id="insta">
+        <div id=informacion class="Statement">
+            <h3> Los animales como mensajeros de los dioses </h3> En un intento por explicar nuestro origen, el ser
+            humano ha construido su identidad desde las visiones y memorias en relación con los dioses y los animales
+            han sido grandes protagonistas, los vínculos que teníamos con los demás seres vivos se han ido perdiendo,
+            olvidando que somos parte esencial del ciclo de la tierra, así que es necesario reflexionar sobre nuestro
+            comportamiento, a ella le debemos todo lo que somos y en su protección hallamos nuestra propia armonía, el
+            hombre ha considerado que los animales tienen un fuerte vinculo con la espiritualidad, guiando y mostrando
+            caminos de consciencia, recordemos que la naturaleza y su biodiversidad también sienten, comprendamos su
+            importancia y reflexionemos sobre nuestro actuar con la Pachamama y la necesidad de volver a ella, porque la
+            vida se defiende y las artes abren camino, hacia el corazón, hacia la tierra </h3>
             <ul>
-      
-                <li> Instagram(<a href="https://www.instagram.com/elartebajotierra/" target="_blank">@elartebajotierra)</a>
-                  
+
+                <li> Instagram(<a href="https://www.instagram.com/elartebajotierra/"
+                        target="_blank">@elartebajotierra)</a>
+                </li>
                 <li> Youtube(<a href="https://www.youtube.com/@artebajotierra" target="_blank">@artebajotierra)</a>
-                  
+                </li>
             </ul>
-            
-            
-            
         </div>
 
     </div>
 </body>
+
 </html>
