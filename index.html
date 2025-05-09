@@ -26,6 +26,74 @@
             container.style.visibility = "visible";
             container2.style.visibility = "hidden";
         }
+
+        function ShowAbout4() {
+            var about4 = document.getElementById("aboutImg4");
+            about4.style.visibility = "visible";
+            var about42 = document.getElementById("aboutImg42");
+            about42.style.visibility = "visible";
+        }
+        function HideAbout4() {
+            var about4 = document.getElementById("aboutImg4");
+            about4.style.visibility = "hidden";
+            var about42 = document.getElementById("aboutImg42");
+            about42.style.visibility = "hidden";
+   
+        }
+        function ShowAbout5() {
+            
+            var about52 = document.getElementById("aboutImg52");
+            about52.style.visibility = "visible";
+        }
+        function HideAbout5() {
+            
+            var about52 = document.getElementById("aboutImg52");
+            about52.style.visibility = "hidden";
+   
+        }
+        function ShowAbout6() {
+            var about6 = document.getElementById("aboutImg6");
+            about6.style.visibility = "visible";
+        }
+        function HideAbout6() {
+            var about6 = document.getElementById("aboutImg6");
+            about6.style.visibility = "hidden";
+   
+        }
+        function ShowAbout7() {
+            var about7 = document.getElementById("aboutImg7");
+            about7.style.visibility = "visible";
+        }
+        function HideAbout7() {
+            var about7 = document.getElementById("aboutImg7");
+            about7.style.visibility = "hidden";
+   
+        }
+        function ShowAbout10() {
+            
+            var about102 = document.getElementById("aboutImg102");
+            about102.style.visibility = "visible";
+        }
+        function HideAbout10() {
+            
+            var about102 = document.getElementById("aboutImg102");
+            about102.style.visibility = "hidden";
+   
+        }
+
+
+        function ShowAbout11() {
+            
+            var about11 = document.getElementById("aboutImg11");
+            about11.style.visibility = "visible";
+        }
+        function HideAbout11() {
+            
+            var about11 = document.getElementById("aboutImg11");
+            about11.style.visibility = "hidden";
+   
+        }
+
     </script>
     <style>
         /* This is the style of the body element */
@@ -136,7 +204,7 @@
             padding: 2vw 2vh;
         }
 
-        #aboutImg1 {
+        #aboutImg11 {
             display: flex;
             justify-content: center;
             /* Centra horizontalmente */
@@ -144,76 +212,64 @@
             position: relative;
             top: 10vh;
             width: 10vw;
-
-
-
         }
 
-        #aboutImg2 {
+        #aboutImg102 {
             display: flex;
             justify-content: center;
             /* Centra horizontalmente */
             align-items: center;
             position: relative;
             top: 10vh;
-            width: 10vw;
-
-
-        }
-
-        #aboutImg3 {
-            display: flex;
-            justify-content: center;
-            /* Centra horizontalmente */
-            align-items: center;
-            position: relative;
-            top: 10vh;
-            width: 10vw;
-
-
-        }
-
-        #aboutImg4 {
-
-            display: flex;
-            justify-content: center;
-            /* Centra horizontalmente */
-            align-items: center;
-            position: relative;
-            top: 11vh;
-            width: 10vw;
-        }
-
-        #aboutImg5 {
-
-            display: flex;
-            justify-content: center;
-            /* Centra horizontalmente */
-            align-items: center;
-            position: relative;
-            top: 11vh;
-            width: 10vw;
-        }
-
-        #aboutImg6 {
-
-            display: flex;
-            justify-content: center;
-            /* Centra horizontalmente */
-            align-items: center;
-            position: relative;
-            top: 11vh;
             width: 10vw;
         }
 
         #aboutImg7 {
-
             display: flex;
             justify-content: center;
             /* Centra horizontalmente */
             align-items: center;
             position: relative;
-            top: 11vh;
+            top: 10vh;
+            width: 10vw;
+        }
+
+        #aboutImg6 {
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            position: relative;
+            top: 8vh;
+            width: 10vw;
+
+        }
+        #aboutImg52 {
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            position: relative;
+            top: 9vh;
+            width: 10vw;
+        }
+        
+        #aboutImg4 {
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            position: relative;
+            top: 9vh;
+            width: 10.8vw;
+        }
+        #aboutImg42 {
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            position: relative;
+            top: 9vh;
             width: 10.8vw;
         }
 
@@ -256,6 +312,10 @@
             object-fit: contain;
 
         }
+        .aboutImg{
+            visibility: hidden;
+        }
+
     </style>
 </head>
 
@@ -281,20 +341,20 @@
             <table>
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg1" class="aboutImg">
+                        <div id="aboutImg11" class="aboutImg">
                             Especies que no solo habitan el territorio sino también en
                             la memoria de quienes las admiramos
 
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
-                        <img src="Imagenes\DSCF8500.JPG" alt="Imagen 1">
-                        <p id="descripcion1" class="descripcion"> Pholis, grabado en punta seca 20x20cm, Manizales 2025,
+                        <img src="Imagenes\DSCF8500.JPG" id="pholis" onmouseover="ShowAbout11()" onmouseout="HideAbout11()">
+                        <p id="descripcion1" class="descripcion" > Pholis, grabado en punta seca 20x20cm, Manizales 2025,
                             de la serie
                             Raíces y Esencia</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg1" class="aboutImg" style="display: none;">
+                        <div id="aboutImg112" class="aboutImg" >
                             Especies que no solo habitan el territorio sino también en
                             la memoria de quienes las admiramos
                         </div>
@@ -302,7 +362,7 @@
                 </tr>
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg2" class="aboutImg" style="display: none;">
+                        <div id="aboutImg10" class="aboutImg" >
                             Estas obras son
                             una muestra de la biodiversidad buscando que la
                             naturaleza florezca en las personas y en sus acciones
@@ -312,13 +372,13 @@
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
-                        <img src="Imagenes\DSCF8503.JPG" alt="Imagen 2">
-                        <p id="descripcion2" class="descripcion"> Buteo, grabado en punta seca 20x20cm, Manizales 2025,
+                        <img src="Imagenes\DSCF8503.JPG" onmouseover="ShowAbout10()" onmouseout="HideAbout10()">
+                        <p id="descripcion102" class="descripcion"> Buteo, grabado en punta seca 20x20cm, Manizales 2025,
                             de la serie
                             Raíces y Esencia</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg2" class="aboutImg">
+                        <div id="aboutImg102" class="aboutImg">
                             Estas obras son
                             una muestra de la biodiversidad buscando que la
                             naturaleza florezca en las personas y en sus acciones
@@ -331,7 +391,7 @@
                 
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg3" class="aboutImg" style="display: none;">
+                        <div id="aboutImg9" class="aboutImg">
                             Estas obras son
                             una muestra de la biodiversidad buscando que la
                             naturaleza florezca en las personas y en sus acciones
@@ -341,13 +401,13 @@
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
-                        <img src="Imagenes\DSCF8982.JPG" alt="Imagen 2">
+                        <img src="Imagenes\DSCF8982.JPG" onmouseover="ShowAbout9()" onmouseout="HideAbout9()">
                         <p id="descripcion2" class="descripcion"> Aglaia, grabado en punta seca 20x20cm, Manizales 2025,
                             de la serie
                             Raíces y Esencia</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg3" class="aboutImg" style="display: none;">
+                        <div id="aboutImg92" class="aboutImg" >
                             Estas obras son
                             una muestra de la biodiversidad buscando que la
                             naturaleza florezca en las personas y en sus acciones
@@ -359,19 +419,19 @@
                 </tr>
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                        <div id="aboutImg8" class="aboutImg" >
                             Poner aqui el texto de la obra
 
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
-                        <img src="Imagenes\ColorNaturaleza.png" alt="Imagen 2">
+                        <img src="Imagenes\ColorNaturaleza.png" onmouseover="ShowAbout8()" onmouseout="HideAbout8()">
                         <p id="descripcion2" class="descripcion"> Tzacatl, pintura mixta a base de pigmentos naturales y tinta para marcadores 35*55cm,<br>
                              Manizales 2025, de la serie
                             Colores de la Naturaleza</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                        <div id="aboutImg82" class="aboutImg" >
                             Poner aqui el texto de la obra
 
                         </div>
@@ -379,7 +439,7 @@
                 </tr>
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg6" class="aboutImg">
+                        <div id="aboutImg7" class="aboutImg">
                             Esta obra de carácter efímero está inspirada en el mundo de la tierra
                             (Pachamama) haciendo uso de la imagen de una lagartija plasmada en la
                             pared con tintas naturales para mostrar la fragilidad de los seres que la
@@ -388,14 +448,14 @@
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
-                        <img src="Imagenes\Tierra.jpg" alt="Imagen 2">
-                        <p id="descripcion2" class="descripcion"> Tierra, Stencil de 70*50 Plasmado con tintas naturales
+                        <img src="Imagenes\Tierra.jpg" onmouseover="ShowAbout7()" onmouseout="HideAbout7()">
+                        <p id="descripcion7" class="descripcion"> Tierra, Stencil de 70*50 Plasmado con tintas naturales
                             en el Palacio de Bellas Artes,<br>
                             Manizales 2025, de la serie
                             Colores de la Naturaleza</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg6" class="aboutImg" style="display: none;">
+                        <div id="aboutImg72" class="aboutImg" >
                             Esta obra de carácter efímero está inspirada en el mundo de la tierra
                             (Pachamama) haciendo uso de la imagen de una lagartija plasmada en la
                             pared con tintas naturales para mostrar la fragilidad de los seres que la
@@ -408,7 +468,7 @@
                
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg4" class="aboutImg">
+                        <div id="aboutImg6" class="aboutImg">
                             Colombia un país biodiverso, posee una
                             cantidad impresionante de criaturas que desde el
                             inicio de los tiempos han tomado un papel espiritual,
@@ -420,7 +480,7 @@
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
-                        <img src="Imagenes\Identidad.png" alt="Imagen 2">
+                        <img src="Imagenes\Identidad.png" onmouseover="ShowAbout6()" onmouseout="HideAbout6()">
                         <p id="descripcion2" class="descripcion"> Identidad, linograbado 55*35cm, de la serie
                             Territorio Ancestral,<br>
                             La obra fue exhibida en la exposición “En obra Gris” ,Parqueadero de la Biblioteca Rogelio Salmona,<br> Universidad de Caldas,
@@ -428,7 +488,7 @@
                             </p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg4" class="aboutImg" style="display: none;">
+                        <div id="aboutImg62" class="aboutImg" >
                             Colombia un país biodiverso, posee una
                             cantidad impresionante de criaturas que desde el
                             inicio de los tiempos han tomado un papel espiritual,
@@ -442,7 +502,7 @@
                 </tr>
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                        <div id="aboutImg5" class="aboutImg" >
                             El jaguar es un animal místico y ancestral cargado de simbología y
                             conocimiento transmitido por tradición oral desde antiguas generaciones, en
                             alusión a las manchas tan características que posee, surge esta pieza en un
@@ -451,14 +511,14 @@
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
-                        <img src="Imagenes\Ilusion.jpg" alt="Imagen 2">
+                        <img src="Imagenes\Ilusion.jpg" onmouseover="ShowAbout5()" onmouseout="HideAbout5()">
                         <p id="descripcion2" class="descripcion"> Ilusion, linograbado 55*35cm, de la serie
                             Territorio Ancestral,<br>
                             La obra fue exhibida en la exposición “En obra Gris” ,Parqueadero de la Biblioteca Rogelio Salmona,<br>Universidad de Caldas,
                             Manizales 2024</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg5" class="aboutImg">
+                        <div id="aboutImg52" class="aboutImg">
                             El jaguar es un animal místico y ancestral cargado de simbología y
                             conocimiento transmitido por tradición oral desde antiguas generaciones, en
                             alusión a las manchas tan características que posee, surge esta pieza en un
@@ -470,7 +530,7 @@
                 
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg7" class="aboutImg">
+                        <div id="aboutImg4" class="aboutImg">
                             En la obra convergen las técnicas clásicas como el grabado y técnicas
                             nuevas como el procesamiento digital de imágenes, es el encuentro de una
                             práctica contemporánea con la simbología que recuerda a nuestros ancestros en el contexto de
@@ -486,14 +546,14 @@
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
-                        <img src="Imagenes\Encuentro.jpg" alt="Imagen 2">
-                        <p id="descripcion2" class="descripcion"> Encuentro, linograbado 55*35cm, de la serie
+                        <img src="Imagenes\Encuentro.jpg" onmouseover="ShowAbout4()" onmouseout="HideAbout4()">
+                        <p id="descripcion4" class="descripcion"> Encuentro, linograbado 55*35cm, de la serie
                             Territorio Ancestral,<br>
                             La obra fue exhibida en la exposición “Taller 602” ,sala de exposiciones biiblioteca Carlos Enrique Ruiz,<br> Universidad Nacional,
                             Manizales 2024</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg7" class="aboutImg">
+                        <div id="aboutImg42" class="aboutImg">
                             Esta propuesta es una reinterpretación de los discos
                             giratorios protopastos como homenaje a los indígenas de la Amazonia y de
                             Nariño, pues las piezas precolombinas encontradas en este territorio
@@ -509,19 +569,19 @@
                 </tr>
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                        <div id="aboutImg3" class="aboutImg" >
                             Poner aqui el texto de la obra
 
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
-                        <img src="Imagenes\CantodelSapo.png" alt="Imagen 2">
-                        <p id="descripcion2" class="descripcion"> Canto de rana, fenaquitiscopio digital 55*55cm, Manizales
+                        <img src="Imagenes\CantodelSapo.png" onmouseover="ShowAbout3()" onmouseout="HideAbout3()">
+                        <p id="descripcion3" class="descripcion"> Canto de rana, fenaquitiscopio digital 55*55cm, Manizales
                             2025, de la serie
                             Expresión Digital</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                        <div id="aboutImg3_2" class="aboutImg" >
                             Poner aqui el texto de la obra
 
                         </div>
@@ -529,7 +589,7 @@
                 </tr>
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                        <div id="aboutImg2" class="aboutImg" >
                             El jaguar es un animal místico y ancestral cargado de simbología y
                             conocimiento transmitido por tradición oral desde antiguas generaciones, en
                             alusión a las manchas tan características que posee, surge esta pieza en un
@@ -538,7 +598,7 @@
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
-                        <img src="Imagenes\Renacer.jpg" alt="Imagen 2">
+                        <img src="Imagenes\Renacer.jpg" onmouseover="ShowAbout2()" onmouseout="HideAbout2()">
                         <p id="descripcion2" class="descripcion"> Renacer, dibujo digital 35*55cm, Manizales
                             2025, de la serie
                             Expresión Digital<br>
@@ -546,7 +606,7 @@
                             Manizales 2024</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                        <div id="aboutImg2_2" class="aboutImg" >
                             El jaguar es un animal místico y ancestral cargado de simbología y
                             conocimiento transmitido por tradición oral desde antiguas generaciones, en
                             alusión a las manchas tan características que posee, surge esta pieza en un
@@ -558,18 +618,18 @@
                 
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                        <div id="aboutImg1" class="aboutImg" >
                             Poner aqui el texto de la obra
 
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
-                        <img src="Imagenes\Fotograma.jpg" alt="Imagen 2">
-                        <p id="descripcion2" class="descripcion"> Fotogramas por golpe de Luz presentados en formato 27*21cm,<br>
+                        <img src="Imagenes\Fotograma.jpg"  onmouseover="ShowAbout1()" onmouseout="HideAbout1()">
+                        <p id="descripcion1" class="descripcion"> Fotogramas por golpe de Luz presentados en formato 27*21cm,<br>
                             La obra fue exhibida en "Fotografía Análoga Universitaria",<br> 4ta muestra Fondo Cultural del Café, Manizales 2019.</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg5" class="aboutImg" style="display: none;">
+                        <div id="aboutImg1_1" class="aboutImg" >
                             Poner aqui el texto de la obra
 
                         </div>
@@ -602,5 +662,3 @@
 </body>
 
 </html>
-
- 
