@@ -14,17 +14,30 @@
             principal.style.visibility = "visible";
         }
         function ShowPortafolio() {
-            var container = document.getElementsByClassName("portafolio")[0];
-            var container2 = document.getElementsByClassName("Statement")[0];
-            container.style.visibility = "visible";
-            container2.style.visibility = "hidden";
+            var container = document.getElementsByClassName("Statement")[0];
+            var container2 = document.getElementsByClassName("portafolio")[0];
+            var container3 = document.getElementsByClassName("Procesos")[0];
+            container.style.visibility = "hidden";
+            container2.style.visibility = "visible";
+            container3.style.visibility = "hidden";
         }
 
         function ShowStatement() {
             var container = document.getElementsByClassName("Statement")[0];
             var container2 = document.getElementsByClassName("portafolio")[0];
+            var container3 = document.getElementsByClassName("Procesos")[0];
             container.style.visibility = "visible";
             container2.style.visibility = "hidden";
+            container3.style.visibility = "hidden";
+        }
+
+        function ShowProcesos() {
+            var container = document.getElementsByClassName("Statement")[0];
+            var container2 = document.getElementsByClassName("portafolio")[0];
+            var container3 = document.getElementsByClassName("Procesos")[0];
+            container.style.visibility = "hidden";
+            container2.style.visibility = "hidden";
+            container3.style.visibility = "visible";
         }
 
         function ShowAbout4() {
@@ -38,18 +51,18 @@
             about4.style.visibility = "hidden";
             var about42 = document.getElementById("aboutImg42");
             about42.style.visibility = "hidden";
-   
+
         }
         function ShowAbout5() {
-            
+
             var about52 = document.getElementById("aboutImg52");
             about52.style.visibility = "visible";
         }
         function HideAbout5() {
-            
+
             var about52 = document.getElementById("aboutImg52");
             about52.style.visibility = "hidden";
-   
+
         }
         function ShowAbout6() {
             var about6 = document.getElementById("aboutImg6");
@@ -58,7 +71,7 @@
         function HideAbout6() {
             var about6 = document.getElementById("aboutImg6");
             about6.style.visibility = "hidden";
-   
+
         }
         function ShowAbout7() {
             var about7 = document.getElementById("aboutImg7");
@@ -67,32 +80,135 @@
         function HideAbout7() {
             var about7 = document.getElementById("aboutImg7");
             about7.style.visibility = "hidden";
-   
+
         }
         function ShowAbout10() {
-            
+
             var about102 = document.getElementById("aboutImg102");
             about102.style.visibility = "visible";
         }
         function HideAbout10() {
-            
+
             var about102 = document.getElementById("aboutImg102");
             about102.style.visibility = "hidden";
-   
+
         }
 
 
         function ShowAbout11() {
-            
+
             var about11 = document.getElementById("aboutImg11");
             about11.style.visibility = "visible";
         }
         function HideAbout11() {
-            
+
             var about11 = document.getElementById("aboutImg11");
             about11.style.visibility = "hidden";
-   
+
         }
+
+
+        function ShowAboutProc1() {
+
+            var aboutProc1 = document.getElementById("aboutProc1");
+            aboutProc1.style.visibility = "visible";
+        }
+        function HideAboutProc1() {
+
+            var aboutProc1 = document.getElementById("aboutProc1");
+            aboutProc1.style.visibility = "hidden";
+
+        }
+
+        function ShowAboutProc2() {
+
+            var aboutProc2 = document.getElementById("aboutProc2");
+            aboutProc2.style.visibility = "visible";
+        }
+        function HideAboutProc2() {
+
+            var aboutProc2 = document.getElementById("aboutProc2");
+            aboutProc2.style.visibility = "hidden";
+
+        }
+
+        function ShowAboutProc3() {
+
+            var aboutProc3 = document.getElementById("aboutProc3_2");
+            aboutProc3.style.visibility = "visible";
+        }
+        function HideAboutProc3() {
+
+            var aboutProc3 = document.getElementById("aboutProc3_2");
+            aboutProc3.style.visibility = "hidden";
+
+        }
+
+        function ShowAboutProc4() {
+
+            var aboutProc1 = document.getElementById("aboutProc4_2");
+            aboutProc1.style.visibility = "visible";
+        }
+        function HideAboutProc4() {
+
+            var aboutProc4 = document.getElementById("aboutProc4_2");
+            aboutProc4.style.visibility = "hidden";
+
+        }
+
+        function ShowAboutProc5() {
+
+            var aboutProc5 = document.getElementById("aboutProc5");
+            aboutProc5.style.visibility = "visible";
+        }
+        function HideAboutProc5() {
+
+            var aboutProc5 = document.getElementById("aboutProc5");
+            aboutProc5.style.visibility = "hidden";
+
+        }
+
+        function ShowAboutProc6() {
+
+            var aboutProc6 = document.getElementById("aboutProc6_2");
+            aboutProc6.style.visibility = "visible";
+        }
+        function HideAboutProc6() {
+
+            var aboutProc6 = document.getElementById("aboutProc6_2");
+            aboutProc6.style.visibility = "hidden";
+
+        }
+
+
+
+        const images = [
+            { src: "ImagenesProceso/Nasus/DSCF9083.JPG", caption: "Pie de foto 1" },
+            { src: "ImagenesProceso/Nasus/DSCF9086.JPG", caption: "Pie de foto 2" },
+            { src: "ImagenesProceso/Nasus/DSCF9088.JPG", caption: "Pie de foto 3" },
+            { src: "ImagenesProceso/Nasus/DSCF9089.JPG", caption: "Pie de foto 4" },
+            { src: "ImagenesProceso/Nasus/DSCF9091.JPG", caption: "Pie de foto 5" },
+            { src: "ImagenesProceso/Nasus/DSCF9092.JPG", caption: "Pie de foto 6" },
+            { src: "ImagenesProceso/Nasus/DSCF9094.JPG", caption: "Pie de foto 7" }
+        ];
+
+        let currentIndex = 0;
+
+        function showImage(index) {
+            document.getElementById('MainImage').src = images[index].src;
+            document.getElementById('caption').innerText = images[index].caption;
+        }
+
+        function MostrarSiguiente() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function MostrarAnterior() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
 
     </script>
     <style>
@@ -100,7 +216,7 @@
         body {
 
             font-family: Georgia, serif;
-            background: black url(smoke.png);
+            background: rgba(40, 40, 54, 0) url(smoke.png);
             background-size: 100% 100%;
 
             margin: 0;
@@ -175,6 +291,23 @@
             width: 84vw;
         }
 
+        .Procesos {
+            visibility: hidden;
+            overflow-y: scroll;
+            /* Habilita el scroll vertical */
+            margin: 8vh 4vw;
+            padding: 4vw 4vh;
+            display: grid;
+            place-items: center;
+            background: rgba(40, 40, 54, 0);
+            position: absolute;
+            top: 0;
+            height: 65vh;
+            width: 84vw;
+        }
+
+
+
         .Statement {
             /* Habilita el scroll vertical */
             margin: 8vh 4vw;
@@ -195,13 +328,66 @@
             left: 1.3vw;
         }
 
+        .text-cell2 {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+
+
+
+        }
+
         .aboutImg {
-            
+
             color: rgb(0, 0, 0);
             background: rgba(255, 255, 255, 0.5);
             font-size: 1vw;
             margin: 3vw;
             padding: 2vw 2vh;
+        }
+
+        .aboutImg2 {
+
+            text-align: center;
+            color: rgb(0, 0, 0);
+            background: rgba(255, 255, 255, 0.5);
+            font-size: 1vw;
+            position: relative;
+            top: 17vw;
+            left: 40%;
+            width: 3vw;
+            padding: -1vw -1vh;
+            padding-top: 1vw;
+            padding-bottom: 1vw;
+            border-radius: 40px;
+
+        }
+
+        .aboutImg22 {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            background: rgba(255, 255, 255, 0.5);
+            font-size: 1vw;
+            position: relative;
+            top: 17vw;
+            right: 40%;
+            width: 3vw;
+            padding: 0vw 0vh;
+            padding-top: 1vw;
+            padding-bottom: 1vw;
+            border-radius: 40px;
+
+        }
+
+        #aboutMainImage1 {
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            position: relative;
+            width: 10vw;
         }
 
         #aboutImg11 {
@@ -244,6 +430,7 @@
             width: 10vw;
 
         }
+
         #aboutImg52 {
             display: flex;
             justify-content: center;
@@ -253,7 +440,7 @@
             top: 9vh;
             width: 10vw;
         }
-        
+
         #aboutImg4 {
             display: flex;
             justify-content: center;
@@ -263,6 +450,7 @@
             top: 9vh;
             width: 10.8vw;
         }
+
         #aboutImg42 {
             display: flex;
             justify-content: center;
@@ -305,6 +493,12 @@
             margin-right: 1vw;
         }
 
+        .Nasus {
+
+            display: grid;
+            place-items: center;
+            object-fit: cover;
+        }
 
         img {
             width: 40vw;
@@ -312,10 +506,10 @@
             object-fit: contain;
 
         }
-        .aboutImg{
+
+        .aboutImg {
             visibility: hidden;
         }
-
     </style>
 </head>
 
@@ -332,9 +526,11 @@
     <!-- the game screen -->
     <div class="box" id="main">
         <div id="opciones" class="options">
-            <a id="button" onclick="return ShowPortafolio()">Portafolio</a>
-
             <a id="button" onclick="return ShowStatement()">Statement </a>
+
+            <a id="button" onclick="return ShowProcesos()">Proceso </a>
+
+            <a id="button" onclick="return ShowPortafolio()">Portafolio</a>
         </div>
 
         <div class="portafolio">
@@ -348,13 +544,14 @@
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
-                        <img src="Imagenes\DSCF8500.JPG" id="pholis" onmouseover="ShowAbout11()" onmouseout="HideAbout11()">
-                        <p id="descripcion1" class="descripcion" > Pholis, grabado en punta seca 20x20cm, Manizales 2025,
+                        <img src="Imagenes\DSCF8500.JPG" id="pholis" onmouseover="ShowAbout11()"
+                            onmouseout="HideAbout11()">
+                        <p id="descripcion1" class="descripcion"> Pholis, grabado en punta seca 20x20cm, Manizales 2025,
                             de la serie
                             Raíces y Esencia</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg112" class="aboutImg" >
+                        <div id="aboutImg112" class="aboutImg">
                             Especies que no solo habitan el territorio sino también en
                             la memoria de quienes las admiramos
                         </div>
@@ -362,7 +559,7 @@
                 </tr>
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg10" class="aboutImg" >
+                        <div id="aboutImg10" class="aboutImg">
                             Estas obras son
                             una muestra de la biodiversidad buscando que la
                             naturaleza florezca en las personas y en sus acciones
@@ -373,7 +570,8 @@
                     </td><!-- 1,1-->
                     <td class="image-cell">
                         <img src="Imagenes\DSCF8503.JPG" onmouseover="ShowAbout10()" onmouseout="HideAbout10()">
-                        <p id="descripcion102" class="descripcion"> Buteo, grabado en punta seca 20x20cm, Manizales 2025,
+                        <p id="descripcion102" class="descripcion"> Buteo, grabado en punta seca 20x20cm, Manizales
+                            2025,
                             de la serie
                             Raíces y Esencia</p><br><br>
                     </td>
@@ -388,7 +586,7 @@
                         </div>
                     </td><!-- 1,1-->
                 </tr>
-                
+
                 <tr>
                     <td class="text-cell">
                         <div id="aboutImg9" class="aboutImg">
@@ -407,7 +605,7 @@
                             Raíces y Esencia</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg92" class="aboutImg" >
+                        <div id="aboutImg92" class="aboutImg">
                             Estas obras son
                             una muestra de la biodiversidad buscando que la
                             naturaleza florezca en las personas y en sus acciones
@@ -419,19 +617,20 @@
                 </tr>
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg8" class="aboutImg" >
+                        <div id="aboutImg8" class="aboutImg">
                             Poner aqui el texto de la obra
 
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
                         <img src="Imagenes\ColorNaturaleza.png" onmouseover="ShowAbout8()" onmouseout="HideAbout8()">
-                        <p id="descripcion2" class="descripcion"> Tzacatl, pintura mixta a base de pigmentos naturales y tinta para marcadores 35*55cm,<br>
-                             Manizales 2024, de la serie
+                        <p id="descripcion2" class="descripcion"> Tzacatl, pintura mixta a base de pigmentos naturales y
+                            tinta para marcadores 35*55cm,<br>
+                            Manizales 2025, de la serie
                             Colores de la Naturaleza</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg82" class="aboutImg" >
+                        <div id="aboutImg82" class="aboutImg">
                             Poner aqui el texto de la obra
 
                         </div>
@@ -451,11 +650,11 @@
                         <img src="Imagenes\Pachamama.jpg" onmouseover="ShowAbout7()" onmouseout="HideAbout7()">
                         <p id="descripcion7" class="descripcion"> Tierra, Stencil de 70*50 Plasmado con tintas naturales
                             en el Palacio de Bellas Artes,<br>
-                            Manizales 2024, de la serie
+                            Manizales 2025, de la serie
                             Colores de la Naturaleza</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg72" class="aboutImg" >
+                        <div id="aboutImg72" class="aboutImg">
                             Esta obra de carácter efímero está inspirada en el mundo de la tierra
                             (Pachamama) haciendo uso de la imagen de una lagartija plasmada en la
                             pared con tintas naturales para mostrar la fragilidad de los seres que la
@@ -464,8 +663,8 @@
                         </div>
                     </td><!-- 1,1-->
                 </tr>
-                
-               
+
+
                 <tr>
                     <td class="text-cell">
                         <div id="aboutImg6" class="aboutImg">
@@ -483,12 +682,13 @@
                         <img src="Imagenes\Identidad.png" onmouseover="ShowAbout6()" onmouseout="HideAbout6()">
                         <p id="descripcion2" class="descripcion"> Identidad, linograbado 55*35cm, de la serie
                             Territorio Ancestral,<br>
-                            La obra fue exhibida en la exposición “En obra Gris” ,Parqueadero de la Biblioteca Rogelio Salmona,<br> Universidad de Caldas,
+                            La obra fue exhibida en la exposición “En obra Gris” ,Parqueadero de la Biblioteca Rogelio
+                            Salmona,<br> Universidad de Caldas,
                             Manizales 2024
-                            </p><br><br>
+                        </p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg62" class="aboutImg" >
+                        <div id="aboutImg62" class="aboutImg">
                             Colombia un país biodiverso, posee una
                             cantidad impresionante de criaturas que desde el
                             inicio de los tiempos han tomado un papel espiritual,
@@ -502,7 +702,7 @@
                 </tr>
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg5" class="aboutImg" >
+                        <div id="aboutImg5" class="aboutImg">
                             El jaguar es un animal místico y ancestral cargado de simbología y
                             conocimiento transmitido por tradición oral desde antiguas generaciones, en
                             alusión a las manchas tan características que posee, surge esta pieza en un
@@ -514,7 +714,8 @@
                         <img src="Imagenes\Ilusion.jpg" onmouseover="ShowAbout5()" onmouseout="HideAbout5()">
                         <p id="descripcion2" class="descripcion"> Ilusion, linograbado 55*35cm, de la serie
                             Territorio Ancestral,<br>
-                            La obra fue exhibida en la exposición “En obra Gris” ,Parqueadero de la Biblioteca Rogelio Salmona,<br>Universidad de Caldas,
+                            La obra fue exhibida en la exposición “En obra Gris” ,Parqueadero de la Biblioteca Rogelio
+                            Salmona,<br>Universidad de Caldas,
                             Manizales 2024</p><br><br>
                     </td>
                     <td class="text-cell">
@@ -527,7 +728,7 @@
                         </div>
                     </td><!-- 1,1-->
                 </tr>
-                
+
                 <tr>
                     <td class="text-cell">
                         <div id="aboutImg4" class="aboutImg">
@@ -549,7 +750,8 @@
                         <img src="Imagenes\Encuentro.jpg" onmouseover="ShowAbout4()" onmouseout="HideAbout4()">
                         <p id="descripcion4" class="descripcion"> Encuentro, linograbado 55*35cm, de la serie
                             Territorio Ancestral,<br>
-                            La obra fue exhibida en la exposición “Taller 602” ,sala de exposiciones biiblioteca Carlos Enrique Ruiz,<br> Universidad Nacional,
+                            La obra fue exhibida en la exposición “Taller 602” ,sala de exposiciones biiblioteca Carlos
+                            Enrique Ruiz,<br> Universidad Nacional,
                             Manizales 2024</p><br><br>
                     </td>
                     <td class="text-cell">
@@ -569,19 +771,20 @@
                 </tr>
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg3" class="aboutImg" >
+                        <div id="aboutImg3" class="aboutImg">
                             Poner aqui el texto de la obra
 
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
                         <img src="Imagenes\CantodelSapo.png" onmouseover="ShowAbout3()" onmouseout="HideAbout3()">
-                        <p id="descripcion3" class="descripcion"> Canto de rana, fenaquitiscopio digital 55*55cm, Manizales
+                        <p id="descripcion3" class="descripcion"> Canto de rana, fenaquitiscopio digital 55*55cm,
+                            Manizales
                             2025, de la serie
                             Expresión Digital</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg3_2" class="aboutImg" >
+                        <div id="aboutImg3_2" class="aboutImg">
                             Poner aqui el texto de la obra
 
                         </div>
@@ -589,7 +792,7 @@
                 </tr>
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg2" class="aboutImg" >
+                        <div id="aboutImg2" class="aboutImg">
                             El jaguar es un animal místico y ancestral cargado de simbología y
                             conocimiento transmitido por tradición oral desde antiguas generaciones, en
                             alusión a las manchas tan características que posee, surge esta pieza en un
@@ -602,11 +805,12 @@
                         <p id="descripcion2" class="descripcion"> Renacer, dibujo digital 35*55cm, Manizales
                             2025, de la serie
                             Expresión Digital<br>
-                            La obra fue exhibida en "Zona de encuentro 2024" ,pinacoteca Palacio de Bellas Artes,<br> Universidad de Caldas,
+                            La obra fue exhibida en "Zona de encuentro 2024" ,pinacoteca Palacio de Bellas Artes,<br>
+                            Universidad de Caldas,
                             Manizales 2024</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg2_2" class="aboutImg" >
+                        <div id="aboutImg2_2" class="aboutImg">
                             El jaguar es un animal místico y ancestral cargado de simbología y
                             conocimiento transmitido por tradición oral desde antiguas generaciones, en
                             alusión a las manchas tan características que posee, surge esta pieza en un
@@ -615,21 +819,23 @@
                         </div>
                     </td><!-- 1,1-->
                 </tr>
-                
+
                 <tr>
                     <td class="text-cell">
-                        <div id="aboutImg1" class="aboutImg" >
+                        <div id="aboutImg1" class="aboutImg">
                             Poner aqui el texto de la obra
 
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
-                        <img src="Imagenes\Fotograma.jpg"  onmouseover="ShowAbout1()" onmouseout="HideAbout1()">
-                        <p id="descripcion1" class="descripcion"> Fotogramas por golpe de Luz presentados en formato 27*21cm,<br>
-                            La obra fue exhibida en "Fotografía Análoga Universitaria",<br> 4ta muestra Fondo Cultural del Café, Manizales 2019.</p><br><br>
+                        <img src="Imagenes\Fotograma.jpg" onmouseover="ShowAbout1()" onmouseout="HideAbout1()">
+                        <p id="descripcion1" class="descripcion"> Fotogramas por golpe de Luz presentados en formato
+                            27*21cm,<br>
+                            La obra fue exhibida en "Fotografía Análoga Universitaria",<br> 4ta muestra Fondo Cultural
+                            del Café, Manizales 2019.</p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutImg1_1" class="aboutImg" >
+                        <div id="aboutImg1_1" class="aboutImg">
                             Poner aqui el texto de la obra
 
                         </div>
@@ -637,6 +843,221 @@
                 </tr>
             </table>
         </div>
+
+
+
+
+
+
+
+
+        <div class="Procesos">
+            <table>
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutProc1" class="aboutImg">
+                            “Nuestra alma está hecha de las veces que la naturaleza nos ha susurrado bonitas melodías,
+                            solo se muestra a quienes sabemos escucharla, haciéndonos parte de su ciclo, llevando un
+                            mensaje de protección, para hallar nuestra  propia armonía”
+
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="ImagenesProceso\Naturaleza .jpg" onmouseover="ShowAboutProc1()"
+                            onmouseout="HideAboutProc1()">
+                        <p id="descripcion2" class="descripcion"> Collage a partir de las especies que
+                            habitan la región, Manizales 2025,<br>
+                            tomado del registro fotográfico
+                        </p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutProc1_2" class="aboutImg">
+                            “Nuestra alma está hecha de las veces que la naturaleza nos ha susurrado bonitas melodías,
+                            solo se muestra a quienes sabemos escucharla, haciéndonos parte de su ciclo, llevando un
+                            mensaje de protección, para hallar nuestra  propia armonía”
+
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+
+
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutProc2" class="aboutImg">
+                            En la historia, muchas culturas del mundo hemos relacionado a los animales con fenómenos del
+                            universo
+                            que no podemos comprender, siendo ellos quienes tienen esa consciencia y pueden comunicarse
+                            con las
+                            diferentes frecuencias con las que convivimos y que no podemos percibir
+
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="ImagenesProceso\DSCF9119.JPG" onmouseover="ShowAboutProc2()"
+                            onmouseout="HideAboutProc2()">
+                        <p id="descripcion1" class="descripcion"> Penelope montagni, dibujo en rapidografo sobre
+                            cartulina durex , Manizales 2025,<br> tomado del
+                            cuaderno de campo
+                        </p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutProc2_2" class="aboutImg">
+                            Poner aqui el texto de la obra
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutProc3" class="aboutImg">
+                            Poner aqui el texto de la obra
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="ImagenesProceso\DSCF9113.JPG" onmouseover="ShowAboutProc3()"
+                            onmouseout="HideAboutProc3()">
+                        <p id="descripcion1" class="descripcion"> Anolis maculiventris, dibujo en rapidografo sobre
+                            cartulina durex , Manizales 2025,<br>
+                            tomado del cuaderno de campo
+                        </p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutProc3_2" class="aboutImg">
+                            Han estado presentes
+                            en la historia, la mitología, la ciencia y ciertamente de nuestras vidas; los seres humanos
+                            que hemos
+                            reflexionado sobre el lugar que ocupamos desde hace siglos, deberíamos comprender la
+                            importancia de los
+                            seres y velar por su conservación cohabitando el mundo y aprendiendo de ellos todo lo que
+                            tienen por
+                            enseñarnos.
+
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutProc4" class="aboutImg">
+                            Poner aqui el texto de la obra
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="ImagenesProceso\DSCF9107.JPG" onmouseover="ShowAboutProc4()"
+                            onmouseout="HideAboutProc4()">
+                        <p id="descripcion1" class="descripcion"> Aglaeactis cupripennis, dibujo en rapidografo sobre
+                            cartulina durex , Manizales
+                            2025, <br> tomado del cuaderno de campo
+                        </p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutProc4_2" class="aboutImg">
+                            En las antiguas civilizaciones de todo el mundo se encuentran vestigios de la relación entre
+                            los dioses y los
+                            animales en alguna faceta, podían ser seres fantásticos con poderes sobrenaturales que
+                            acompañaban o
+                            servían a las deidades, o los mismos dioses podían adoptar formas de las bestias total o
+                            parcialmente incluso
+                            podían ser la combinación de uno o mas animales.
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutProc5" class="aboutImg">
+                            Se evidencia por culturas como la egipcia,
+                            griega, hindú y las culturas precolombinas la relevancia de la fauna en el desarrollo
+                            integral de la humanidad
+                            desde el inicio de los tiempos, como lo dice el Sax (2001) en the mythical zoo, incluso los
+                            glifos más antiguos
+                            de los animales tenían mayor detalle que los que representaban a las personas y los primeros
+                            dioses eran
+                            toros, águilas, búhos, serpientes zorros gatos perros íbices entre muchos otros.
+
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="ImagenesProceso\DSCF9106.JPG" onmouseover="ShowAboutProc5()"
+                            onmouseout="HideAboutProc5()">
+                        <p id="descripcion1" class="descripcion"> Pristimantis unistrigatus, dibujo en rapidografo sobre
+                            cartulina durex ,
+                            Manizales 2025,<br> tomado del cuaderno de campo
+                        </p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutProc5_2" class="aboutImg">
+                            Poner aqui el texto de la obra
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutProc6" class="aboutImg">
+                            Poner aqui el texto de la obra
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <img src="ImagenesProceso\DSCF9104.JPG" onmouseover="ShowAboutProc6()"
+                            onmouseout="HideAboutProc6()">
+                        <p id="descripcion1" class="descripcion"> Sceloporus brownorum, dibujo en rapidografo sobre
+                            cartulina durex
+                            , Manizales 2025,<br>tomado del cuaderno de campo
+                        </p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutProc6_2" class="aboutImg">
+                            Tantos misterios se esconden en el universo y cada animal es una ventana por la cual podemos
+                            contemplar una pequeña parte del cosmos, tanta tecnología y desarrollo debería estar siempre
+                            en pro del
+                            cuidado de las especies y sus hábitats naturales pues siendo conscientes de su importancia
+                            deberíamos velar
+                            por su prevalencia.
+
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+                <tr>
+                    <td class="text-cell2">
+                        <p id="aboutMainImage11" class="aboutImg2" onclick="MostrarAnterior()">🠔</p>
+
+                    </td><!-- 1,1-->
+                    <td class="image-cell" id="MainWindow">
+                        <img id="MainImage" src="ImagenesProceso\Nasus\DSCF9083.JPG" onmouseover="ShowAbout1()"
+                            onmouseout="HideAbout1()">
+                        <p id="MainDescription" class="descripcion"> “Nasus
+                            ”, pruebas de estado, grabado en agua fuerte, Manizales 2025,<br>
+                            de la serie raíces y esencia </p><br><br>
+                    </td>
+                    <td class="text-cell2">
+                        <p id="aboutMainImage11" class="aboutImg22" onclick="MostrarSiguiente()">🠖</p>
+
+                    </td><!-- 1,1-->
+                </tr>
+            </table>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
         <div id=informacion class="Statement">
             <h3> Los animales como mensajeros de los dioses </h3> En un intento por explicar nuestro origen, el ser
             humano ha construido su identidad desde las visiones y memorias en relación con los dioses y los animales
@@ -654,7 +1075,7 @@
                 </li>
                 <li> Youtube(<a href="https://www.youtube.com/@artebajotierra" target="_blank">@artebajotierra)</a>
                 </li>
-                
+
             </ul>
         </div>
 
