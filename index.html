@@ -328,6 +328,12 @@
             left: 1.3vw;
         }
 
+        .image-cell2 {
+            position: relative;
+            
+            left:3%;
+        }
+
         .text-cell2 {
             position: relative;
             display: flex;
@@ -348,6 +354,16 @@
             padding: 2vw 2vh;
             border-radius: 0.5vw;
         }
+        .aboutImgb {
+            position: relative;
+            left: 10%;
+            color: rgb(0, 0, 0);
+            background: rgba(255, 255, 255, 0.5);
+            font-size: 1vw;
+            margin: 3vw;
+            padding: 2vw 2vh;
+            border-radius: 0.5vw;
+        }
 
         .aboutImg2 {
 
@@ -357,7 +373,7 @@
             font-size: 1vw;
             position: relative;
             top: 17vw;
-            left: 40%;
+            left: 50%;
             width: 3vw;
             padding: -1vw -1vh;
             padding-top: 1vw;
@@ -373,7 +389,7 @@
             font-size: 1vw;
             position: relative;
             top: 17vw;
-            right: 40%;
+            right: 30%;
             width: 3vw;
             padding: 0vw 0vh;
             padding-top: 1vw;
@@ -567,7 +583,10 @@
 
         }
 
-        .aboutImg {
+        .aboutImg  {
+            visibility: hidden;
+        }
+        .aboutImgb  {
             visibility: hidden;
         }
     </style>
@@ -608,7 +627,7 @@
                             onmouseout="HideAbout11()">
                         <p id="descripcion1" class="descripcion"> Pholis, grabado en punta seca 20x20cm, Manizales 2025,
                             de la serie
-                            Raíces y Esencia</p><br><br>
+                            Raíces y Esencia</p><br>
                     </td>
                     <td class="text-cell">
                         <div id="aboutImg112" class="aboutImg">
@@ -633,7 +652,7 @@
                         <p id="descripcion102" class="descripcion"> Buteo, grabado en punta seca 20x20cm, Manizales
                             2025,
                             de la serie
-                            Raíces y Esencia</p><br><br>
+                            Raíces y Esencia</p><br>
                     </td>
                     <td class="text-cell">
                         <div id="aboutImg102" class="aboutImg">
@@ -662,7 +681,7 @@
                         <img src="Imagenes\DSCF8982.JPG" onmouseover="ShowAbout9()" onmouseout="HideAbout9()">
                         <p id="descripcion2" class="descripcion"> Aglaia, grabado en punta seca 20x20cm, Manizales 2025,
                             de la serie
-                            Raíces y Esencia</p><br><br>
+                            Raíces y Esencia</p><br>
                     </td>
                     <td class="text-cell">
                         <div id="aboutImg92" class="aboutImg">
@@ -687,7 +706,7 @@
                         <p id="descripcion2" class="descripcion"> Tzacatl, pintura mixta a base de pigmentos naturales y
                             tinta para marcadores 35*55cm,<br>
                             Manizales 2025, de la serie
-                            Colores de la Naturaleza</p><br><br>
+                            Colores de la Naturaleza</p><br>
                     </td>
                     <td class="text-cell">
                         <div id="aboutImg82" class="aboutImg">
@@ -711,7 +730,7 @@
                         <p id="descripcion7" class="descripcion"> Tierra, Stencil de 70*50 Plasmado con tintas naturales
                             en el Palacio de Bellas Artes,<br>
                             Manizales 2025, de la serie
-                            Colores de la Naturaleza</p><br><br>
+                            Colores de la Naturaleza</p><br>
                     </td>
                     <td class="text-cell">
                         <div id="aboutImg72" class="aboutImg">
@@ -745,7 +764,7 @@
                             La obra fue exhibida en la exposición “En obra Gris” ,Parqueadero de la Biblioteca Rogelio
                             Salmona,<br> Universidad de Caldas,
                             Manizales 2024
-                        </p><br><br>
+                        </p><br>
                     </td>
                     <td class="text-cell">
                         <div id="aboutImg62" class="aboutImg">
@@ -776,7 +795,7 @@
                             Territorio Ancestral,<br>
                             La obra fue exhibida en la exposición “En obra Gris” ,Parqueadero de la Biblioteca Rogelio
                             Salmona,<br>Universidad de Caldas,
-                            Manizales 2024</p><br><br>
+                            Manizales 2024</p><br>
                     </td>
                     <td class="text-cell">
                         <div id="aboutImg52" class="aboutImg">
@@ -812,7 +831,7 @@
                             Territorio Ancestral,<br>
                             La obra fue exhibida en la exposición “Taller 602” ,sala de exposiciones biiblioteca Carlos
                             Enrique Ruiz,<br> Universidad Nacional,
-                            Manizales 2024</p><br><br>
+                            Manizales 2024</p><br>
                     </td>
                     <td class="text-cell">
                         <div id="aboutImg42" class="aboutImg">
@@ -841,7 +860,7 @@
                         <p id="descripcion3" class="descripcion"> Canto de rana, fenaquitiscopio digital 55*55cm,
                             Manizales
                             2025, de la serie
-                            Expresión Digital</p><br><br>
+                            Expresión Digital</p><br>
                     </td>
                     <td class="text-cell">
                         <div id="aboutImg3_2" class="aboutImg">
@@ -867,7 +886,7 @@
                             Expresión Digital<br>
                             La obra fue exhibida en "Zona de encuentro 2024" ,pinacoteca Palacio de Bellas Artes,<br>
                             Universidad de Caldas,
-                            Manizales 2024</p><br><br>
+                            Manizales 2024</p><br>
                     </td>
                     <td class="text-cell">
                         <div id="aboutImg2_2" class="aboutImg">
@@ -892,7 +911,7 @@
                         <p id="descripcion1" class="descripcion"> Fotogramas por golpe de Luz presentados en formato
                             27*21cm,<br>
                             La obra fue exhibida en "Fotografía Análoga Universitaria",<br> 4ta muestra Fondo Cultural
-                            del Café, Manizales 2019.</p><br><br>
+                            del Café, Manizales 2019.</p><br>
                     </td>
                     <td class="text-cell">
                         <div id="aboutImg1_1" class="aboutImg">
@@ -923,7 +942,7 @@
 
                         </div>
                     </td><!-- 1,1-->
-                    <td class="image-cell">
+                    <td class="image-cell2">
                         <img src="ImagenesProceso\Naturaleza .jpg" onmouseover="ShowAboutProc1()"
                             onmouseout="HideAboutProc1()">
                         <p id="descripcion2" class="descripcion"> Collage a partir de las especies que
@@ -932,7 +951,7 @@
                         </p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutProc1_2" class="aboutImg">
+                        <div id="aboutProc1_2" class="aboutImgb">
                             “Nuestra alma está hecha de las veces que la naturaleza nos ha susurrado bonitas melodías,
                             solo se muestra a quienes sabemos escucharla, haciéndonos parte de su ciclo, llevando un
                             mensaje de protección, para hallar nuestra  propia armonía”
@@ -955,7 +974,7 @@
 
                         </div>
                     </td><!-- 1,1-->
-                    <td class="image-cell">
+                    <td class="image-cell2">
                         <img src="ImagenesProceso\DSCF9119.JPG" onmouseover="ShowAboutProc2()"
                             onmouseout="HideAboutProc2()">
                         <p id="descripcion1" class="descripcion"> Penelope montagni, dibujo en rapidografo sobre
@@ -964,7 +983,7 @@
                         </p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutProc2_2" class="aboutImg">
+                        <div id="aboutProc2_2" class="aboutImgb">
                             Poner aqui el texto de la obra
 
                         </div>
@@ -978,7 +997,7 @@
 
                         </div>
                     </td><!-- 1,1-->
-                    <td class="image-cell">
+                    <td class="image-cell2">
                         <img src="ImagenesProceso\DSCF9113.JPG" onmouseover="ShowAboutProc3()"
                             onmouseout="HideAboutProc3()">
                         <p id="descripcion1" class="descripcion"> Anolis maculiventris, dibujo en rapidografo sobre
@@ -987,7 +1006,7 @@
                         </p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutProc3_2" class="aboutImg">
+                        <div id="aboutProc3_2" class="aboutImgb">
                             Han estado presentes
                             en la historia, la mitología, la ciencia y ciertamente de nuestras vidas; los seres humanos
                             que hemos
@@ -1009,7 +1028,7 @@
 
                         </div>
                     </td><!-- 1,1-->
-                    <td class="image-cell">
+                    <td class="image-cell2">
                         <img src="ImagenesProceso\DSCF9107.JPG" onmouseover="ShowAboutProc4()"
                             onmouseout="HideAboutProc4()">
                         <p id="descripcion1" class="descripcion"> Aglaeactis cupripennis, dibujo en rapidografo sobre
@@ -1018,7 +1037,7 @@
                         </p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutProc4_2" class="aboutImg">
+                        <div id="aboutProc4_2" class="aboutImgb">
                             En las antiguas civilizaciones de todo el mundo se encuentran vestigios de la relación entre
                             los dioses y los
                             animales en alguna faceta, podían ser seres fantásticos con poderes sobrenaturales que
@@ -1045,7 +1064,7 @@
 
                         </div>
                     </td><!-- 1,1-->
-                    <td class="image-cell">
+                    <td class="image-cell2">
                         <img src="ImagenesProceso\DSCF9106.JPG" onmouseover="ShowAboutProc5()"
                             onmouseout="HideAboutProc5()">
                         <p id="descripcion1" class="descripcion"> Pristimantis unistrigatus, dibujo en rapidografo sobre
@@ -1054,7 +1073,7 @@
                         </p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutProc5_2" class="aboutImg">
+                        <div id="aboutProc5_2" class="aboutImgb">
                             Poner aqui el texto de la obra
 
                         </div>
@@ -1067,7 +1086,7 @@
 
                         </div>
                     </td><!-- 1,1-->
-                    <td class="image-cell">
+                    <td class="image-cell2">
                         <img src="ImagenesProceso\DSCF9104.JPG" onmouseover="ShowAboutProc6()"
                             onmouseout="HideAboutProc6()">
                         <p id="descripcion1" class="descripcion"> Sceloporus brownorum, dibujo en rapidografo sobre
@@ -1076,7 +1095,7 @@
                         </p><br><br>
                     </td>
                     <td class="text-cell">
-                        <div id="aboutProc6_2" class="aboutImg">
+                        <div id="aboutProc6_2" class="aboutImgb">
                             Tantos misterios se esconden en el universo y cada animal es una ventana por la cual podemos
                             contemplar una pequeña parte del cosmos, tanta tecnología y desarrollo debería estar siempre
                             en pro del
@@ -1093,7 +1112,7 @@
                         <p id="aboutMainImage11" class="aboutImg2" onclick="MostrarAnterior()">Prev</p>
 
                     </td><!-- 1,1-->
-                    <td class="image-cell" id="MainWindow">
+                    <td class="image-cell2" id="MainWindow">
                         <img id="MainImage" src="ImagenesProceso\Nasus\DSCF9083.JPG" onmouseover="ShowAbout1()"
                             onmouseout="HideAbout1()">
                         <p id="MainDescription" class="descripcion"> “Nasus
