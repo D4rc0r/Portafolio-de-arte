@@ -148,10 +148,14 @@
 
             var aboutProc1 = document.getElementById("aboutProc4_2");
             aboutProc1.style.visibility = "visible";
+            var aboutProc4 = document.getElementById("aboutProc4");
+            aboutProc4.style.visibility = "visible";
         }
         function HideAboutProc4() {
 
             var aboutProc4 = document.getElementById("aboutProc4_2");
+            aboutProc4.style.visibility = "hidden";
+            var aboutProc4 = document.getElementById("aboutProc4");
             aboutProc4.style.visibility = "hidden";
 
         }
@@ -167,6 +171,22 @@
             aboutProc5.style.visibility = "hidden";
 
         }
+        function ShowAboutProc5a() {
+
+            var aboutProc5a = document.getElementById("aboutProc5a");
+            aboutProc5a.style.visibility = "visible";
+            var aboutProc52a = document.getElementById("aboutProc5_2a");
+            aboutProc52a.style.visibility = "visible";
+        }
+        function HideAboutProc5a() {
+
+            var aboutProc5a = document.getElementById("aboutProc5a");
+            aboutProc5a.style.visibility = "hidden";
+            var aboutProc52a = document.getElementById("aboutProc5_2a");
+            aboutProc52a.style.visibility = "hidden";
+
+        }
+        
 
         function ShowAboutProc6() {
 
@@ -216,7 +236,7 @@
         body {
 
             font-family: Georgia, serif;
-            background: rgba(40, 40, 54, 0) url(smoke.png);
+            background: rgba(40, 40, 54, 0) url(FondoTinta.JPG);
             background-size: 100% 100%;
 
             margin: 0;
@@ -252,7 +272,7 @@
             text-align: left;
             position: relative;
             top: -17vh;
-            left: 7vh;
+            left: 20vh;
             font-size: 2vw;
             font-size: 2vh;
         }
@@ -330,8 +350,8 @@
 
         .image-cell2 {
             position: relative;
-            
-            left:3%;
+
+            left: 3%;
         }
 
         .text-cell2 {
@@ -354,6 +374,7 @@
             padding: 2vw 2vh;
             border-radius: 0.5vw;
         }
+
         .aboutImgb {
             position: relative;
             left: 10%;
@@ -413,7 +434,7 @@
             /* Centra horizontalmente */
             align-items: center;
             position: relative;
-            top: 9vh;
+            top: 7vh;
             width: 10vw;
         }
 
@@ -424,6 +445,16 @@
             align-items: center;
             position: relative;
             top: 9vh;
+            width: 10vw;
+        }
+
+        #aboutProc4 {
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            position: relative;
+            top: 8vh;
             width: 10vw;
         }
 
@@ -444,6 +475,24 @@
             align-items: center;
             position: relative;
             top: 8vh;
+            width: 10vw;
+        }
+        #aboutProc5a {
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            position: relative;
+            top: 8vh;
+            width: 10vw;
+        }
+        #aboutProc5_2a {
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            position: relative;
+            top: 9vh;
             width: 10vw;
         }
 
@@ -583,11 +632,26 @@
 
         }
 
-        .aboutImg  {
+        .aboutImg {
             visibility: hidden;
         }
-        .aboutImgb  {
+
+        .aboutImgb {
             visibility: hidden;
+        }
+        .aboutImgA {
+            /* Habilita el scroll vertical */
+            margin: 8vh 4vw;
+            padding: 4vw 4vh;
+            display: grid;
+            position: relative;
+            top: -2vw;
+            
+            color: rgb(0, 0, 0);
+            background: rgba(255, 255, 255, 0.5);
+            
+            
+            font-size: 1.1vw;
         }
     </style>
 </head>
@@ -597,9 +661,9 @@
 
     <div class="box" id="title" onclick="return start()">
 
-        <a id="title1"><br><big><big>Portafolio de arte</big></big> </a>
+        <a id="title1"><br><big><big>Ivan Dario Coral</big></big> </a>
 
-        <p id="subtitle"><big>Ivan Dario Coral</big></p>
+        <p id="subtitle"><big>Portafolio</big></p>
     </div>
 
     <!-- the game screen -->
@@ -616,6 +680,32 @@
             <table>
                 <tr>
                     <td class="text-cell">
+                        <div id="aboutImg12" class="aboutImg">
+                            Especies que no solo habitan el territorio sino también en
+                            la memoria de quienes las admiramos
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell">
+                        <div id="aboutImg12" class="aboutImgA">
+                            Especies que no solo habitan el territorio sino también 
+                            la memoria de quienes las admiramos, estas obras son
+                            una muestra de la biodiversidad, buscando que la
+                            naturaleza florezca en las personas y en sus acciones,
+                            porque si las cuidamos podemos preservarlas, así como
+                            nuestras raíces y esencia
+
+                        </div>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutImg122" class="aboutImg">
+                            Especies que no solo habitan el territorio sino también en
+                            la memoria de quienes las admiramos
+                        </div>
+                    </td><!-- 1,3-->
+                </tr>
+                <tr>
+                    <td class="text-cell">
                         <div id="aboutImg11" class="aboutImg">
                             Especies que no solo habitan el territorio sino también en
                             la memoria de quienes las admiramos
@@ -623,8 +713,7 @@
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
-                        <img src="Imagenes\DSCF8500.JPG" id="pholis" onmouseover="ShowAbout11()"
-                            onmouseout="HideAbout11()">
+                        <img src="Imagenes\DSCF8500.JPG" id="pholis">
                         <p id="descripcion1" class="descripcion"> Pholis, grabado en punta seca 20x20cm, Manizales 2025,
                             de la serie
                             Raíces y Esencia</p><br>
@@ -648,7 +737,7 @@
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell">
-                        <img src="Imagenes\DSCF8503.JPG" onmouseover="ShowAbout10()" onmouseout="HideAbout10()">
+                        <img src="Imagenes\DSCF8503.JPG">
                         <p id="descripcion102" class="descripcion"> Buteo, grabado en punta seca 20x20cm, Manizales
                             2025,
                             de la serie
@@ -969,7 +1058,9 @@
                             universo
                             que no podemos comprender, siendo ellos quienes tienen esa consciencia y pueden comunicarse
                             con las
-                            diferentes frecuencias con las que convivimos y que no podemos percibir
+                            diferentes frecuencias con las que convivimos y que no podemos percibir, han estado
+                            presentes
+                            en la historia, la mitología, la ciencia y ciertamente en nuestras vidas
 
 
                         </div>
@@ -1007,8 +1098,7 @@
                     </td>
                     <td class="text-cell">
                         <div id="aboutProc3_2" class="aboutImgb">
-                            Han estado presentes
-                            en la historia, la mitología, la ciencia y ciertamente de nuestras vidas; los seres humanos
+                            Los seres humanos
                             que hemos
                             reflexionado sobre el lugar que ocupamos desde hace siglos, deberíamos comprender la
                             importancia de los
@@ -1024,20 +1114,6 @@
                 <tr>
                     <td class="text-cell">
                         <div id="aboutProc4" class="aboutImg">
-                            Poner aqui el texto de la obra
-
-                        </div>
-                    </td><!-- 1,1-->
-                    <td class="image-cell2">
-                        <img src="ImagenesProceso\DSCF9107.JPG" onmouseover="ShowAboutProc4()"
-                            onmouseout="HideAboutProc4()">
-                        <p id="descripcion1" class="descripcion"> Aglaeactis cupripennis, dibujo en rapidografo sobre
-                            cartulina durex , Manizales
-                            2025, <br> tomado del cuaderno de campo
-                        </p><br><br>
-                    </td>
-                    <td class="text-cell">
-                        <div id="aboutProc4_2" class="aboutImgb">
                             En las antiguas civilizaciones de todo el mundo se encuentran vestigios de la relación entre
                             los dioses y los
                             animales en alguna faceta, podían ser seres fantásticos con poderes sobrenaturales que
@@ -1048,10 +1124,16 @@
 
                         </div>
                     </td><!-- 1,1-->
-                </tr>
-                <tr>
+                    <td class="image-cell2">
+                        <img src="ImagenesProceso\EsculturaBronce.JPG" onmouseover="ShowAboutProc4()"
+                            onmouseout="HideAboutProc4()">
+                        <p id="descripcion1" class="descripcion"> Escultura del dios Set, dibujo en rapidografo sobre
+                            cartulina durex , Manizales
+                            2025, <br> tomado del cuaderno de campo
+                        </p><br><br>
+                    </td>
                     <td class="text-cell">
-                        <div id="aboutProc5" class="aboutImg">
+                        <div id="aboutProc4_2" class="aboutImgb">
                             Se evidencia por culturas como la egipcia,
                             griega, hindú y las culturas precolombinas la relevancia de la fauna en el desarrollo
                             integral de la humanidad
@@ -1061,13 +1143,31 @@
                             dioses eran
                             toros, águilas, búhos, serpientes zorros gatos perros íbices entre muchos otros.
 
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutProc5" class="aboutImg">
+                            Se ha fortalecido tanto el vínculo que Los animales han dejado de ser solo un medio de
+                            producción, han
+                            llegado a formar parte incluso de nuestras familias, pues ellos son los mejores
+                            acompañantes, los mejores
+                            maestros, quienes nos ayudan a canalizar nuestra energía y contribuyen en nuestro estado de
+                            ánimo, según
+                            Silva (2022) en su libro guías espirituales animales, ellos son nuestros amigos, ayudantes,
+                            asistentes,
+                            protectores y fuentes de nutrición, no solo nos ayudan a sobrevivir sino que también dan
+                            sentido a nuestras
+                            vidas.
+
 
                         </div>
                     </td><!-- 1,1-->
                     <td class="image-cell2">
-                        <img src="ImagenesProceso\DSCF9106.JPG" onmouseover="ShowAboutProc5()"
+                        <img src="ImagenesProceso\DSCF9107.JPG" onmouseover="ShowAboutProc5()"
                             onmouseout="HideAboutProc5()">
-                        <p id="descripcion1" class="descripcion"> Pristimantis unistrigatus, dibujo en rapidografo sobre
+                        <p id="descripcion1" class="descripcion"> Aglaeactis cupripennis, dibujo en rapidografo sobre
                             cartulina durex ,
                             Manizales 2025,<br> tomado del cuaderno de campo
                         </p><br><br>
@@ -1075,6 +1175,43 @@
                     <td class="text-cell">
                         <div id="aboutProc5_2" class="aboutImgb">
                             Poner aqui el texto de la obra
+
+                        </div>
+                    </td><!-- 1,1-->
+                </tr>
+                <tr>
+                    <td class="text-cell">
+                        <div id="aboutProc5a" class="aboutImg">
+                            Conforme ha avanzado la humanidad, hemos investigado la fauna, sus hábitats y su
+                            comportamiento,
+                            ayudándonos a comprender ciertas cosas con las que convivimos pero no podemos interpretar
+                            con nuestros
+                            sentidos, en el libro como se comunican los animales, Ruiz (2023) nos ilustra como los
+                            animales están
+                            dotados de sentidos que hacen posible percibir las señales del entorno,
+
+
+                        </div>
+                    </td><!-- 1,1-->
+                    <td class="image-cell2">
+                        <img src="ImagenesProceso\DSCF9106.JPG" onmouseover="ShowAboutProc5a()"
+                            onmouseout="HideAboutProc5()">
+                        <p id="descripcion1" class="descripcion"> Pristimantis unistrigatus, dibujo en rapidografo sobre
+                            cartulina durex ,
+                            Manizales 2025,<br> tomado del cuaderno de campo
+                        </p><br><br>
+                    </td>
+                    <td class="text-cell">
+                        <div id="aboutProc5_2a" class="aboutImgb">
+                            puesto que los
+                            animales no son entes
+                            aislados flotando en un espacio inerte y vacío, sino que están en contacto con su medio
+                            más cercano, de
+                            él es de donde extraerán la primera y más inmediata información. Por ejemplo, el contacto de
+                            su cuerpo con
+                            el medio que les rodea ya sea agua, aire, tierra o una combinación de ellos, es ya en sí
+                            misma una fuente de
+                            información.
 
                         </div>
                     </td><!-- 1,1-->
@@ -1096,10 +1233,10 @@
                     </td>
                     <td class="text-cell">
                         <div id="aboutProc6_2" class="aboutImgb">
-                            Tantos misterios se esconden en el universo y cada animal es una ventana por la cual podemos
+                            En el universo se esconden infinidad de misterios y cada animal es una ventana por la cual podemos
                             contemplar una pequeña parte del cosmos, tanta tecnología y desarrollo debería estar siempre
-                            en pro del
-                            cuidado de las especies y sus hábitats naturales pues siendo conscientes de su importancia
+                            ligado al 
+                            cuidado de las especies y sus hábitats naturales, pues siendo conscientes de su importancia
                             deberíamos velar
                             por su prevalencia.
 
