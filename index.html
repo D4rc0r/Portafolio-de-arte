@@ -556,7 +556,7 @@
         <h1 style="text-align: center; font-size: 28px; margin-bottom: 20px;">Bibliografía</h1>
 
         <p style="text-indent: -1.5em; margin-left: 1.5em;">
-          Banco de la República. (s. f.). <em>Andrés Fabián Domínguez Urrea</em>. Recuperado el 30 de julio de 2025, de
+          Banco de la República. (s. f.). <em>Andrés Fabián Domínguez Urrea</em>. Recuperado el 30 de julio de 2025, de
           <a href="https://www.banrepcultural.org/exposiciones/imagen-regional-9/region-pacifico-y-amazonia/andres-fabian-dominguez-urrea"
             target="_blank">
             https://www.banrepcultural.org/exposiciones/imagen-regional-9/region-pacifico-y-amazonia/andres-fabian-dominguez-urrea
@@ -564,7 +564,7 @@
         </p>
 
         <p style="text-indent: -1.5em; margin-left: 1.5em;">
-          Banco de la República. (s. f.). <em>José Ismael Manco Parra</em>. Recuperado el 30 de julio de 2025, de
+          Banco de la República. (s. f.). <em>José Ismael Manco Parra</em>. Recuperado el 30 de julio de 2025, de
           <a href="https://www.banrepcultural.org/exposiciones/imagen-regional-9/region-andina-y-orinoquia/jose-ismael-manco-parra"
             target="_blank">
             https://www.banrepcultural.org/exposiciones/imagen-regional-9/region-andina-y-orinoquia/jose-ismael-manco-parra
@@ -619,8 +619,25 @@
   <script>
     const burger = document.getElementById('burger');
     const nav = document.getElementById('nav');
-    burger.addEventListener('click', () => {
+
+    // Toggle menu (añadido stopPropagation para evitar que el click burbujee y cierre por el handler global)
+    burger.addEventListener('click', (e) => {
+      e.stopPropagation();
       nav.classList.toggle('nav--active');
+    });
+
+    // Cerrar al hacer clic en un enlace del menú
+    document.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('nav--active');
+      });
+    });
+
+    // Cerrar al hacer clic fuera del menú y del botón hamburguesa
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !burger.contains(e.target)) {
+        nav.classList.remove('nav--active');
+      }
     });
 
     function filterSection(id) {
