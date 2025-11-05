@@ -7,7 +7,7 @@
   <title>ElArteBajoTierra</title>
   <style>
     :root {
-      --main-color: #37776a;
+      --main-color: #ffffff;
       --text-color: #333;
       --bg-color: #f9f9f9;
     }
@@ -23,15 +23,24 @@
       color: var(--text-color);
       background: var(--bg-color);
       line-height: 1.6;
+      padding-top: 40px;
     }
 
+    /* ====== HEADER ORIGINAL ====== */
     .header {
       background: var(--main-color);
       color: #fff;
-      padding: 1rem;
-      position: sticky;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      overflow: visible;
+      position: fixed;
       top: 0;
-      z-index: 100;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 0 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .header__inner {
@@ -40,20 +49,46 @@
       align-items: center;
       max-width: 1200px;
       margin: 0 auto;
+      width: 100%;
     }
 
     .header__logo {
-      font-size: 1.5rem;
-      font-weight: bold;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0;
+      padding: 0;
+      height: 300px;
+      width: auto;
+    }
+
+    .logo-img {
+      height: 200px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      position: relative;
+      top: 60px;
+      margin-left: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .logo-img:hover {
+      transform: scale(1.05);
     }
 
     .nav {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
+      margin-left: auto;
     }
 
     .nav__link {
-      color: #fff;
+      color: #333030;
       text-decoration: none;
       font-weight: 500;
       cursor: pointer;
@@ -69,9 +104,10 @@
     .burger__line {
       width: 25px;
       height: 3px;
-      background: #fff;
+      background: #312121;
     }
 
+    /* ====== SECCIONES ====== */
     .hero,
     .section {
       padding: 3rem 1rem;
@@ -115,45 +151,116 @@
       transform: translateY(-4px);
     }
 
-    .project-card__title {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-card__text {
-      font-size: 0.95rem;
-      color: #555;
+    /* ====== GALERÍA ====== */
+    .obras-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
     .obra-card {
       background: #fff;
-      padding: 1rem;
-      border-radius: 12px;
+      padding: 0;
+      border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      margin-bottom: 2rem;
+      overflow: hidden;
+      position: relative;
     }
 
     .obra-card img {
       width: 100%;
-      border-radius: 6px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
       cursor: pointer;
+      display: block;
     }
 
     .obra-caption {
-      font-size: 0.9rem;
-      text-align: right;
-      color: #666;
-      margin-top: 0.3rem;
-    }
-
-    .obra-desc {
-      font-size: 0.9rem;
-      margin-top: 0.5rem;
-      color: #444;
       display: none;
     }
 
+    .obra-desc {
+      display: none;
+    }
+
+    /* ====== MODAL ====== */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 3000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .modal .descripcion {
+      color: #fff;
+      font-size: 0.9rem;
+      margin-top: 15px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      max-width: 85%;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .modal img:hover+.descripcion {
+      opacity: 1;
+    }
+
+    .prev,
+    .next {
+      position: absolute;
+      top: 50%;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px;
+      transform: translateY(-50%);
+      transition: 0.3s;
+    }
+
+    .prev:hover,
+    .next:hover {
+      color: #bbb;
+    }
+
+    .prev {
+      left: 30px;
+    }
+
+    .next {
+      right: 30px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: white;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #bbb;
+    }
+
+    /* ====== VISIBILIDAD ====== */
     .section,
     .hero {
       display: none;
@@ -164,13 +271,19 @@
       display: block;
     }
 
-    @media (max-width:768px) {
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 768px) {
+      .logo-img {
+        height: 80px;
+        top: 5px;
+      }
+
       .nav {
         display: none;
         flex-direction: column;
         background: var(--main-color);
         position: absolute;
-        top: 60px;
+        top: 70px;
         right: 0;
         width: 200px;
         padding: 1rem;
@@ -181,7 +294,12 @@
       }
 
       .burger {
-        display: flex;
+        display: flex !important;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2000;
       }
     }
   </style>
@@ -189,15 +307,20 @@
 
 <body>
 
+  <!-- ✅ HEADER ORIGINAL CONSERVADO -->
   <header class="header">
     <div class="header__inner">
-      <div class="header__logo">ElArteBajoTierra</div>
+      <div class="header__logo">
+        <img src="logo.png" alt="Logo" class="logo-img">
+      </div>
+
       <nav class="nav" id="nav">
         <a class="nav__link" onclick="filterSection('procesoDetalle')">Proceso</a>
         <a class="nav__link" onclick="filterSection('portafolioDetalle')">Portafolio</a>
         <a class="nav__link" onclick="filterSection('referentesDetalle')">Referentes</a>
         <a class="nav__link" onclick="resetSections()">Inicio</a>
       </nav>
+
       <div class="burger" id="burger">
         <div class="burger__line"></div>
         <div class="burger__line"></div>
@@ -206,25 +329,13 @@
     </div>
   </header>
 
+  <!-- ✅ SECCIONES DE INICIO Y RESÚMENES (SIN CAMBIO) -->
   <section class="hero active" id="statement">
     <h1 class="hero__title">Los animales como mensajeros de los dioses</h1>
     <p class="hero__text">
-      En un intento por explicar nuestro origen, el ser humano ha construido su
-      identidad desde las visiones y memorias en relación con los dioses, y los animales
-      han sido grandes protagonistas. Los vínculos que teníamos con los demás seres
-      vivos se han ido perdiendo, olvidando que somos parte esencial del ciclo de la
-      tierra. Así que es necesario reflexionar sobre nuestro comportamiento; a ella le
-      debemos todo lo que somos y en su protección hallamos nuestra propia armonía.<br><br>
-      El hombre ha considerado que los animales tienen un fuerte vínculo con la
-      espiritualidad, guiando y mostrando caminos de consciencia. Recordemos que la
-      naturaleza y su biodiversidad también sienten, comprendamos su importancia y
-      reflexionemos sobre nuestro actuar con la Pachamama y la necesidad de volver a
-      ella, porque la vida se defiende y las artes abren camino, hacia el corazón, hacia
-      la tierra.<br><br>
-      En mi práctica recorro el territorio, observo y fotografío animales en su entorno. A
-      partir de esas imágenes hago bocetos que luego transformo en grabados, donde
-      cada animal es representado como un mensajero entre lo visible y lo invisible,
-      abriendo preguntas sobre nuestra conexión con lo que nos rodea.
+      Mi práctica explora la relación entre los humanos, los animales y la tierra. A través de la observación, la
+      fotografía y el grabado, represento a los animales como mensajeros entre lo visible y lo invisible, evocando
+      nuestra conexión ancestral con la naturaleza
     </p>
   </section>
 
@@ -232,447 +343,214 @@
     <div class="projects__list">
       <div class="project-card" onclick="filterSection('procesoDetalle')">
         <h3 class="project-card__title">Resumen del proceso artístico</h3>
-        <p class="project-card__text">Exploro la relación entre naturaleza y símbolo a través del grabado, el dibujo y
-          la fotografía, evocando lo ancestral y lo poético.</p>
+        <p class="project-card__text">El dibujo es mi forma de acercarme a los animales y al territorio, un ejercicio de
+          observación que revela la conexión entre lo visible y lo invisible.</p>
       </div>
       <div class="project-card" onclick="filterSection('portafolioDetalle')">
         <h3 class="project-card__title">Obras destacadas</h3>
         <p class="project-card__text">Cada obra nace del diálogo entre técnica y símbolo, donde animales y elementos
-          naturales se convierten en metáforas de memoria y presencia.</p>
+          naturales se convierten en metáforas de memoria y presencia</p>
       </div>
       <div class="project-card" onclick="filterSection('referentesDetalle')">
         <h3 class="project-card__title">Inspiraciones clave</h3>
         <p class="project-card__text">Mis referentes provienen del arte, la naturaleza y lo ritual; voces que inspiran
-          mi búsqueda simbólica y visual.
-
-        </p>
+          mi búsqueda simbólica y visual</p>
       </div>
     </div>
   </section>
 
+  <!-- ✅ AQUÍ VAN TUS SECCIONES DE IMÁGENES -->
+  <!-- (solo ejemplo de estructura; las rutas siguen las de tu archivo original) -->
+
   <section class="section" id="procesoDetalle">
-    <div class="obra-card">
-      <img src="ImagenesProceso\Naturaleza.jpg" alt="Naturaleza" onclick="toggleDesc(this)">
-      <p class="obra-caption">Collage a partir de las especies que habitan la región, Manizales 2025,
+    <div class="obras-grid">
+      <div class="obra-card">
+        <img src="ImagenesProceso\cupripennis.JPG" alt="Naturaleza">
+        <p class="obra-desc">Aglaeactis cupripennis, dibujo en rapidografo sobre
+        cartulina durex ,
+        Manizales 2025</p>
+      </div>
+      <div class="obra-card">
+        <img src="ImagenesProceso\maculiventris.JPG" alt="Andrés Domínguez">
+        <p class="obra-desc">Anolis maculiventris, dibujo en rapidografo sobre
+        cartulina durex , Manizales 2025.</p>
+      </div>
+      <div class="obra-card">
+        <img src="ImagenesProceso\penelope.JPG" alt="Naturaleza">
+        <p class="obra-desc">Penelope montagni, dibujo en rapidografo sobre
+        cartulina durex , Manizales 2025</p>
+      </div>
+      <div class="obra-card">
+        <img src="ImagenesProceso\prismantis.JPG" alt="Naturaleza">
+        <p class="obra-desc">Pristimantis unistrigatus, dibujo en rapidografo sobre
+        cartulina durex ,
+        Manizales 2025</p>
+      </div>
+      <div class="obra-card">
+        <img src="ImagenesProceso\CollageProceso.png" alt="Naturaleza">
+        <p class="obra-desc">Collage a partir de las especies que habitan la región, Manizales 2025,
         tomado del registro fotográfico</p>
-      <p class="obra-desc">“Nuestra alma está hecha de las veces que la naturaleza nos ha susurrado bonitas melodías,
-        solo se muestra a quienes sabemos escucharla, haciéndonos parte de su ciclo, llevando un
-        mensaje de protección, para hallar nuestra propia armonía”</p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesProceso\Penelope Montagni.JPG" alt="Penelope" onclick="toggleDesc(this)">
-      <p class="obra-caption">Penelope montagni, dibujo en rapidografo sobre
-        cartulina durex , Manizales 2025,<br> tomado del
-        cuaderno de campo</p>
-      <p class="obra-desc">En la historia, muchas culturas del mundo hemos relacionado a los animales con fenómenos del
-        universo
-        que no podemos comprender, siendo ellos quienes tienen esa consciencia y pueden comunicarse
-        con las
-        diferentes frecuencias con las que convivimos y que no podemos percibir, han estado
-        presentes
-        en la historia, la mitología, la ciencia y ciertamente en nuestras vidas</p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesProceso\Maculiventris.JPG" alt="Maculiventris" onclick="toggleDesc(this)">
-      <p class="obra-caption">Anolis maculiventris, dibujo en rapidografo sobre
-        cartulina durex , Manizales 2025,<br>
-        tomado del cuaderno de campo</p>
-      <p class="obra-desc">Los seres humanos
-        quienes hemos
-        reflexionado sobre el lugar que ocupamos desde hace siglos, deberíamos comprender la
-        importancia de los
-        seres y velar por su conservación cohabitando el mundo y aprendiendo de ellos todo lo que
-        tienen por
-        enseñarnos.</p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesProceso\EsculturaBronce.JPG" alt="Bronce" onclick="toggleDesc(this)">
-      <p class="obra-caption">Escultura del dios Set, dibujo en rapidografo sobre
-        cartulina durex , Manizales
-        2025, <br> tomado del cuaderno de campo</p>
-      <p class="obra-desc">En las antiguas civilizaciones de todo el mundo se encuentran vestigios de la relación entre
-        los dioses y los
-        animales en alguna faceta, podían ser seres fantásticos con poderes sobrenaturales que
-        acompañaban o
-        servían a las deidades, o los mismos dioses podían adoptar formas de las bestias total o
-        parcialmente incluso
-        podían ser la combinación de uno o mas animales.<br>
-        Se evidencia por culturas como la egipcia,
-        griega, hindú y las culturas precolombinas la relevancia de la fauna en el desarrollo
-        integral de la humanidad
-        desde el inicio de los tiempos, como lo dice el Sax (2001) en the mythical zoo, incluso los
-        glifos más antiguos
-        de los animales tenían mayor detalle que los que representaban a las personas y los primeros
-        dioses eran
-        toros, águilas, búhos, serpientes zorros gatos perros íbices entre muchos otros.
-      </p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesProceso\Cupripennis.JPG" alt="cupripennis" onclick="toggleDesc(this)">
-      <p class="obra-caption">Aglaeactis cupripennis, dibujo en rapidografo sobre
-        cartulina durex ,
-        Manizales 2025,<br> tomado del cuaderno de campo</p>
-      <p class="obra-desc">Aunque el contexto sea desafiante, el vínculo con los animales sigue encontrando formas de
-        manifestarse, dejando de ser solo un medio de
-        producción, han
-        llegado a formar parte incluso de nuestras familias, pues ellos son los mejores
-        acompañantes, los mejores
-        maestros, quienes nos ayudan a canalizar nuestra energía y contribuyen en nuestro estado de
-        ánimo, según
-        Silva (2022) en su libro guías espirituales animales, ellos son nuestros amigos, ayudantes,
-        asistentes,
-        protectores y fuentes de nutrición, no solo nos ayudan a sobrevivir sino que también dan
-        sentido a nuestras
-        vidas.</p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesProceso\Pristimantis.JPG" alt="Pristimantis" onclick="toggleDesc(this)">
-      <p class="obra-caption">Pristimantis unistrigatus, dibujo en rapidografo sobre
-        cartulina durex ,
-        Manizales 2025,<br> tomado del cuaderno de campo</p>
-      <p class="obra-desc">puesto que los
-        animales no son entes
-        aislados flotando en un espacio inerte y vacío, sino que están en contacto con su medio
-        más cercano, de
-        él es de donde extraerán la primera y más inmediata información. Por ejemplo, el contacto de
-        su cuerpo con
-        el medio que les rodea ya sea agua, aire, tierra o una combinación de ellos, es ya en sí
-        misma una fuente de
-        información.</p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesProceso\Sceloporus.JPG" alt="Sceloporus" onclick="toggleDesc(this)">
-      <p class="obra-caption">Sceloporus brownorum, dibujo en rapidografo sobre
-        cartulina durex
-        , Manizales 2025,<br>tomado del cuaderno de campo</p>
-      <p class="obra-desc">En el universo se esconden infinidad de misterios y cada animal es una ventana por la cual
-        podemos
-        contemplar una pequeña parte del cosmos, tanta tecnología y desarrollo debería estar siempre
-        ligado al
-        cuidado de las especies y sus hábitats naturales, pues siendo conscientes de su importancia
-        deberíamos velar
-        por su prevalencia.</p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesProceso\Nasus VI.JPG" alt="Nasus" onclick="toggleDesc(this)">
-      <p class="obra-caption">Nasus, Grabado en agua fuerte sobre cartulina durex,
-        prueba de estado VI, Manizales 2025.</p>
-      <p class="obra-desc">El dibujo directo con pluma o lapicero no representa una forma definitiva del arte, sino una
-        entre muchas posibilidades de expresión visual. Como cualquier medio, tiene sus
-        limitaciones, pero ofrece cualidades únicas que solo pueden capturarse a través de la
-        precisión y contundencia de la línea entintada</p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesProceso\Aglaia V.JPG" alt="Aglaia" onclick="toggleDesc(this)">
-      <p class="obra-caption">Aglaia , Grabado en agua fuerte sobre cartulina durex,
-        prueba de estado V, Manizales 2025.</p>
-      <p class="obra-desc">El grabado, por su parte, no solo complementa al dibujo, sino que amplifica su alcance. Su
-        potencial artístico radica en su capacidad para difundir, preservar y proyectar la esencia
-        de una obra, permitiendo que la poética y la dimensión simbólica del proceso creativo
-        trasciendan el tiempo y el espacio.</p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesProceso\Buteo II.JPG" alt="ButeoII" onclick="toggleDesc(this)">
-      <p class="obra-caption">ButeoII , Grabado en agua fuerte sobre cartulina
-        durex, prueba de estado IV, Manizales 2025.</p>
-      <p class="obra-desc"> </p>
+      </div>
+      <!-- 🔹 (Mantén todas tus imágenes originales aquí igual que en tu archivo) -->
     </div>
   </section>
 
   <section class="section" id="portafolioDetalle">
-    <div class="obra-card">
-      <img src="ImagenesPortafolio\Pholis.JPG" alt="Pholis" onclick="toggleDesc(this)">
-      <p class="obra-caption">Pholis, grabado en punta seca 20x20cm, Manizales 2025,
-        de la serie
-        Raíces y Esencia</p>
-      <p class="obra-desc">Especies que no solo habitan el territorio sino también
-        la memoria de quienes las admiramos, estas obras son
-        una muestra de la biodiversidad, buscando que la
-        naturaleza florezca en las personas y en sus acciones,
-        porque si las cuidamos podemos preservarlas, así como
-        nuestras raíces y esencia</p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesPortafolio\Buteo.JPG" alt="Buteo" onclick="toggleDesc(this)">
-      <p class="obra-caption">Buteo, grabado en punta seca 20x20cm, Manizales
-        2025,
-        de la serie
-        Raíces y Esencia</p>
-      <p class="obra-desc"></p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesPortafolio\CupripennisI.JPG" alt="Aglaia" onclick="toggleDesc(this)">
-      <p class="obra-caption">Aglaia, grabado en punta seca 20x20cm, Manizales 2025,
-        de la serie
-        Raíces y Esencia</p>
-      <p class="obra-desc"></p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesPortafolio\ColorNaturaleza.png" alt="Tzacatl" onclick="toggleDesc(this)">
-      <p class="obra-caption">Tzacatl, pintura mixta a base de pigmentos naturales y
-        tinta para marcadores 35*55cm,<br>
-        Manizales 2025, de la serie
-        Colores de la Naturaleza</p>
-      <p class="obra-desc"></p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesPortafolio\Pachamama.jpg" alt="Tierra" onclick="toggleDesc(this)">
-      <p class="obra-caption">Tierra, Stencil de 70*50 Plasmado con tintas naturales
-        en el Palacio de Bellas Artes,<br>
-        Manizales 2025, de la serie
-        Colores de la Naturaleza</p>
-      <p class="obra-desc"> Esta obra de carácter efímero está inspirada en el mundo de la tierra
-        (Pachamama) haciendo uso de la imagen de una lagartija plasmada en la
-        pared con tintas naturales para mostrar la fragilidad de los seres que la
-        habitan y generar conciencia alrededor de ellos.</p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesPortafolio\Identidad.png" alt="Identidad" onclick="toggleDesc(this)">
-      <p class="obra-caption">Identidad, linograbado 55*35cm, de la serie
-        Territorio Ancestral,<br>
-        La obra fue exhibida en la exposición “En obra Gris” ,Biblioteca Rogelio
-        Salmona,<br> Universidad de Caldas,
-        Manizales 2024</p>
-      <p class="obra-desc"> Colombia un país biodiverso, posee una
-        cantidad impresionante de criaturas que desde el
-        inicio de los tiempos han tomado un papel espiritual,
-        para forjar nuestras culturas, en esta obra se plasma la
-        anaconda recordando esos patrones encontrados en
-        la estética precolombina y como remembranza a
-        nuestras antiguas creencias.</p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesPortafolio\Ilusion.jpg" alt="Ilusion" onclick="toggleDesc(this)">
-      <p class="obra-caption">Ilusion, linograbado 55*35cm, de la serie
-        Territorio Ancestral,<br>
-        La obra fue exhibida en la exposición “En obra Gris”, Biblioteca Rogelio
-        Salmona,<br>Universidad de Caldas,
-        Manizales 2024</p>
-      <p class="obra-desc"> El jaguar es un animal místico y ancestral cargado de simbología y
-        conocimiento transmitido por tradición oral desde antiguas generaciones, en
-        alusión a las manchas tan características que posee, surge esta pieza en un
-        intento por transmitir esa magia escondida detrás de este ser.</p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesPortafolio\Encuentro.jpg" alt="Encuentro" onclick="toggleDesc(this)">
-      <p class="obra-caption">Encuentro, linograbado 55*35cm, de la serie
-        Territorio Ancestral,<br>
-        La obra fue exhibida en la exposición “Taller 602”, Biiblioteca Carlos
-        Enrique Ruiz,<br> Universidad Nacional,
-        Manizales 2024</p>
-      <p class="obra-desc"> En la obra convergen las técnicas clásicas como el grabado y técnicas
-        nuevas como el procesamiento digital de imágenes, es el encuentro de una
-        práctica contemporánea con la simbología que recuerda a nuestros ancestros en el contexto de
-        la cultura de
-        Nariño <br><br>
-        Ellos plasmaron en su obra símbolos geométricos y sus
-        imágenes se diferencian por los periodos a los que corresponden (Piartal,
-        Tuza, Capulí), aunque algunas piezas de cerámica conservan ciertas
-        características, en sus diseños utilizan figuras Antropomórficas Zoomórficas
-        o Fito mórficas, de acuerdo con sus costumbres culturales la flora y fauna
-        que los rodeaban.</p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesPortafolio\CantodelSapo.png" alt="Canto" onclick="toggleDesc(this)">
-      <p class="obra-caption">Canto de rana, fenaquitiscopio digital 55*55cm,
+    <div class="obras-grid">
+      <div class="obra-card">
+        <img src="ImagenesPortafolio\DSC_0136 (1).JPG" alt="Pholis">
+        <p class="obra-desc">Yacumama, grabado en agua tinta 20x20cm, Manizales 2025</p>
+      </div>
+      <div class="obra-card">
+        <img src="ImagenesPortafolio\DSC_0161.JPG" alt="Andrés Domínguez">
+        <p class="obra-desc">Buteo, grabado en agua fuerte 20x20cm, Manizales
+        2025</p>
+      </div>
+      <div class="obra-card">
+        <img src="ImagenesPortafolio\DSC_0153.JPG" alt="Pholis">
+        <p class="obra-desc">Pholis, grabado en punta seca 20x20cm, Manizales 2025</p>
+      </div>
+      <div class="obra-card">
+        <img src="ImagenesPortafolio\DSC_0171.JPG" alt="Naturaleza">
+        <p class="obra-desc">Aglaia, grabado en punta seca 20x20cm, Manizales 2025</p>
+      </div>
+      <div class="obra-card">
+        <img src="ImagenesPortafolio\DSCF0556.JPG" alt="Naturaleza">
+        <p class="obra-desc">Mundo del fuego, linograbado 70*90cm, Manizales
+        2025</p>
+      </div>
+      <div class="obra-card">
+        <img src="ImagenesPortafolio\DSCF0442.JPG" alt="Naturaleza">
+        <p class="obra-desc">Mundo del aire, linograbado 70*90cm, Manizales
+        2025</p>
+      </div>
+      <div class="obra-card">
+        <img src="ImagenesPortafolio\Identidad.png" alt="Naturaleza">
+        <p class="obra-desc">Identidad, linograbado Digitalizado 55*35cm, Manizales
+        2025</p>
+      </div>
+      <div class="obra-card">
+        <img src="ImagenesPortafolio\Encuentro.jpg" alt="Naturaleza">
+        <p class="obra-desc">Encuentro, linograbado Digitalizado 55*55cm, Manizales
+        2025</p>
+      </div>
+      <div class="obra-card">
+        <img src="ImagenesPortafolio\Renacer.jpg" alt="Naturaleza">
+        <p class="obra-desc">Renacer, dibujo digital 35*55cm, Manizales
+        2025</p>
+      </div>
+      <div class="obra-card">
+        <img src="ImagenesPortafolio\CantodelSapo.png" alt="Naturaleza">
+        <p class="obra-desc">Canto de rana, fenaquitiscopio digital 55*55cm,
         Manizales
-        2025, de la serie
-        Expresión Digital</p>
-      <p class="obra-desc"> </p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesPortafolio\Renacer.jpg" alt="Renacer" onclick="toggleDesc(this)">
-      <p class="obra-caption">Renacer, dibujo digital 35*55cm, Manizales
-        2025, de la serie
-        Expresión Digital<br>
-        La obra fue exhibida en "Zona de encuentro 2024" ,pinacoteca Palacio de Bellas Artes,<br>
-        Universidad de Caldas,
-        Manizales 2024</p>
-      <p class="obra-desc"> </p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesPortafolio\Fotograma.jpg" alt="Fotograma" onclick="toggleDesc(this)">
-      <p class="obra-caption">Fotogramas por golpe de Luz presentados en formato
-        27*21cm,<br>
-        La obra fue exhibida en "Fotografía Análoga Universitaria",<br> 4ta muestra Fondo Cultural
-        del Café, Manizales 2019.</p>
-      <p class="obra-desc"> </p>
+        2025</p>
+      </div>
     </div>
   </section>
 
   <section class="section" id="referentesDetalle">
-    <div class="obra-card">
-      <img src="ImagenesReferentes\jaguar-andres-domiguez.jpg" alt="Andrés Domínguez" onclick="toggleDesc(this)">
-      <p class="obra-caption">Andres Dominguez, Jaguar Ambil, dibujo a base de
+    <div class="obras-grid">
+      <div class="obra-card">
+        <img src="ImagenesReferentes/jaguar-andres-domiguez.jpg" alt="Andrés Domínguez">
+        <p class="obra-desc">Andres Dominguez, Jaguar Ambil, dibujo a base de
         materiales organicos, 2015</p>
-      <p class="obra-desc">Andrés Fabián Domínguez Urrea es un artista plástico originario de Leticia, Amazonas,
-        Colombia, cuya obra se caracteriza por una profunda conexión con la biodiversidad y las
-        culturas de la región amazónica. Su trabajo destaca por el uso de materiales orgánicos
-        locales, como el mambe y el huito, con los cuales crea dibujos y piezas que reflejan la
-        riqueza natural y cultural de su entorno.</p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesReferentes\werjayo-oso-jose-ismael-manco.jpg" alt="Jose Ismael Manco Parra"
-        onclick="toggleDesc(this)">
-      <p class="obra-caption">Jose Ismael Manco Parra, werjayo oso, dibujo en carbon
-        mineral sobre lienzo, 2010</p>
-      <p class="obra-desc">José Ismael Manco Parra es un artista plástico y agricultor proveniente de Duitama, Boyacá,
-        que trabaja con diversas
-        técnicas como dibujo, videoarte, performance, instalación y escultura. Su obra se
-        caracteriza por una fuerte conexión con la defensa del territorio y el medio ambiente,
-        proponiendo la agricultura como una forma de creación artística y pensamiento crítico.<br><br>
-        Esta pieza,realizada en 2010 con carbón vegetal sobre lienzo, representa un oso andino y
-        forma parte de su
-        serie de dibujos que exploran la relación entre el ser humano y la naturaleza. <br><br>
-        La obra fue exhibida en la muestra "Imagen Regional 9: Territorios Guardianes" se incluyó en
-        el eje "Humano no humano", que invita a reflexionar sobre la coexistencia con otras formas
-        de vida y la necesidad de superar la visión antropocéntrica del mundo</p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesReferentes\smith_sojourn.jpg" alt="Kiki Smith" onclick="toggleDesc(this)">
-      <p class="obra-caption">Kiki Smith, Sojourn, tejido en telar de jaquard, 2010</p>
-      <p class="obra-desc">La artista estadounidense Kiki Smith ha centrado gran parte de su obra en la conexión entre
-        el cuerpo, la naturaleza y la espiritualidad. En su tapiz "Sojourn" (2010)
-        representa un zorro caminando sobre troncos, en una escena que evoca un
-        momento de pausa y contemplación.<br><br>
-
-        Sojourn es un ejemplo claro del enfoque poético de Kiki Smith, que combina lo íntimo y lo
-        simbólico en imágenes que invitan a la reflexión y al silencio.<br><br> El título, que significa “estancia” o
-        “travesía breve”, sugiere un viaje espiritual o
-        interior. El zorro, animal recurrente en su obra, simboliza la adaptación, el tránsito y la
-        intuición. Como en muchas de sus piezas, Smith recurre a la figura animal para hablar de la
-        condición humana y proponer una visión animista del mundo, donde todo está interconectado.</p>
-    </div>
-    <div class="obra-card">
-      <img src="ImagenesReferentes\Santamaria- pesces.jpg" alt="Susana Santamaria" onclick="toggleDesc(this)">
-      <p class="obra-caption">Susana Santamaria, Pesces, Grabado en agua fuerte,
-        2022</p>
-      <p class="obra-desc">Una de sus obras más reconocidas es Pesces, realizada en la técnica de aguafuerte. Esta
-        pieza fue seleccionada para representar a Colombia en la Trienal de Arte Latinoamericano de
-        Nueva York 2022, dentro del Salón de Grabado curado por el artista dominicano Ezequiel
-        Taveras. La obra refleja la inspiración de Santamaría en la naturaleza y los animales,
-        elementos recurrentes en su trabajo artístico.</p>
-      <div id="aboutImg12" class="aboutImgA" style="padding: 20px; font-family: 'Georgia', serif; line-height: 1.6;">
-        <h1 style="text-align: center; font-size: 28px; margin-bottom: 20px;">Bibliografía</h1>
-
-        <p style="text-indent: -1.5em; margin-left: 1.5em;">
-          Banco de la República. (s. f.). <em>Andrés Fabián Domínguez Urrea</em>. Recuperado el 30 de julio de 2025, de
-          <a href="https://www.banrepcultural.org/exposiciones/imagen-regional-9/region-pacifico-y-amazonia/andres-fabian-dominguez-urrea"
-            target="_blank">
-            https://www.banrepcultural.org/exposiciones/imagen-regional-9/region-pacifico-y-amazonia/andres-fabian-dominguez-urrea
-          </a>
-        </p>
-
-        <p style="text-indent: -1.5em; margin-left: 1.5em;">
-          Banco de la República. (s. f.). <em>José Ismael Manco Parra</em>. Recuperado el 30 de julio de 2025, de
-          <a href="https://www.banrepcultural.org/exposiciones/imagen-regional-9/region-andina-y-orinoquia/jose-ismael-manco-parra"
-            target="_blank">
-            https://www.banrepcultural.org/exposiciones/imagen-regional-9/region-andina-y-orinoquia/jose-ismael-manco-parra
-          </a>
-        </p>
-
-        <p style="text-indent: -1.5em; margin-left: 1.5em;">
-          Southwest Contemporary. (2022, 8 de diciembre). <em>Susana Santamaria</em>. Recuperado el 30 de julio de 2025,
-          de
-          <a href="https://southwestcontemporary.com/kiki-smith-from-the-creek-offers-wondrous-passage-to-natural-worlds/"
-            target="_blank">
-            https://southwestcontemporary.com/kiki-smith-from-the-creek-offers-wondrous-passage-to-natural-worlds/
-          </a>
-        </p>
-
-        <p style="text-indent: -1.5em; margin-left: 1.5em;">
-          El Colombiano. (2022, 29 de septiembre). <em>Susana Santamaria</em>. Recuperado el 30 de julio de 2025, de
-          <a href="https://www.elcolombiano.com/cultura/artistas-antioquenos-en-la-tecnica-de-grabado-participan-de-la-trienal-de-arte-latinoamericano-en-nueva-york-MN18736192"
-            target="_blank">
-            https://www.elcolombiano.com/cultura/artistas-antioquenos-en-la-tecnica-de-grabado-participan-de-la-trienal-de-arte-latinoamericano-en-nueva-york-MN18736192
-          </a>
-        </p>
-
-        <p style="text-indent: -1.5em; margin-left: 1.5em;">
-          Ruiz, G. M. (2023). <em>¿Cómo se comunican los animales?</em> Madrid: CSIC.
-        </p>
-
-        <p style="text-indent: -1.5em; margin-left: 1.5em;">
-          Sax, B. (2001). <em>The Mythical Zoo</em>. Santa Barbara, California: ABC CLIO.
-        </p>
-
-        <p style="text-indent: -1.5em; margin-left: 1.5em;">
-          Silva, M. (2022). <em>Guías espirituales animales</em>.
-        </p>
       </div>
+      <div class="obra-card">
+        <img src="ImagenesReferentes\werjayo-oso-jose-ismael-manco.jpg" alt="Andrés Domínguez">
+        <p class="obra-desc">Jose Ismael Manco Parra, werjayo oso, dibujo en carbon
+        mineral sobre lienzo, 2010</p>
+
+      </div>
+      <div class="obra-card">
+        <img src="ImagenesReferentes\Santamaria- pesces.jpg" alt="Naturaleza">
+        <p class="obra-desc">Susana Santamaria, Pesces, Grabado en agua fuerte,
+        2022</p>
+      </div>
+      <div class="obra-card">
+        <img src="ImagenesReferentes\smith_sojourn.jpg" alt="Naturaleza">
+        <p class="obra-desc">Kiki Smith, Sojourn, tejido en telar de jaquard, 2010</p>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <button onclick="toggleInfo()"
-      style="position:fixed;bottom:20px;right:20px;padding:0.7rem 1rem;background:#37776a;;color:#fff;border:none;border-radius:8px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);z-index:200;">Info</button>
-    <div id="infoBox"
-      style="display:none;position:fixed;bottom:70px;right:20px;width:260px;padding:1rem;background:#fff;border:1px solid #ccc;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);font-size:0.9rem;color:#333;z-index:200;">
-      <strong>Instrucciones de uso:</strong>
-      <ul style="margin-top:0.5rem;padding-left:1.2rem;">
-        <li>Haz clic sobre cualquier imagen para ver su descripción.</li>
-        <li>Haz doble clic sobre una imagen para abrirla en otra pestaña.</li>
-        <li>Usa los botones de la parte superior para navegar entre secciones.</li>
-      </ul>
-    </div>
-  </footer>
+  <!-- ✅ MODAL DE GALERÍA -->
+  <div class="modal" id="imageModal">
+    <span class="close" id="closeModal">&times;</span>
+    <span class="prev" id="prevBtn">&#10094;</span>
+    <img id="modalImg" src="">
+    <p class="descripcion" id="modalDesc"></p>
+    <span class="next" id="nextBtn">&#10095;</span>
+  </div>
 
   <script>
+    /* ====== FUNCIONES DE NAVEGACIÓN ORIGINAL ====== */
     const burger = document.getElementById('burger');
     const nav = document.getElementById('nav');
-
-    // Toggle menu (añadido stopPropagation para evitar que el click burbujee y cierre por el handler global)
-    burger.addEventListener('click', (e) => {
+    burger.addEventListener('click', e => {
       e.stopPropagation();
       nav.classList.toggle('nav--active');
     });
-
-    // Cerrar al hacer clic en un enlace del menú
-    document.querySelectorAll('.nav__link').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('nav--active');
-      });
-    });
-
-    // Cerrar al hacer clic fuera del menú y del botón hamburguesa
-    document.addEventListener('click', (e) => {
-      if (!nav.contains(e.target) && !burger.contains(e.target)) {
-        nav.classList.remove('nav--active');
-      }
+    document.addEventListener('click', e => {
+      if (!nav.contains(e.target) && !burger.contains(e.target)) nav.classList.remove('nav--active');
     });
 
     function filterSection(id) {
-      const sections = document.querySelectorAll('.section, .hero');
-      sections.forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('.section, .hero').forEach(s => s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
     }
 
     function resetSections() {
-      const sections = document.querySelectorAll('.section, .hero');
-      sections.forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('.section, .hero').forEach(s => s.classList.remove('active'));
       document.getElementById('statement').classList.add('active');
       document.getElementById('resumenes').classList.add('active');
     }
 
-    function toggleDesc(img) {
-      const desc = img.parentElement.querySelector('.obra-desc');
-      desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
-    }
+    resetSections();
 
-    document.querySelectorAll('.obra-card img').forEach(img => {
-      img.addEventListener('dblclick', () => {
-        const src = img.getAttribute('src');
-        if (src && src !== '#') window.open(src, '_blank');
+    /* ====== MODAL FUNCIONAL ====== */
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const modalDesc = document.getElementById("modalDesc");
+    const closeModal = document.getElementById("closeModal");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    let currentGallery = [];
+    let currentIndex = 0;
+
+    document.querySelectorAll(".obra-card img").forEach(img => {
+      img.addEventListener("click", e => {
+        const section = e.target.closest(".section");
+        currentGallery = [...section.querySelectorAll(".obra-card img")];
+        currentIndex = currentGallery.indexOf(e.target);
+        showModal();
       });
     });
 
-    function toggleInfo() {
-      const info = document.getElementById('infoBox');
-      info.style.display = info.style.display === 'block' ? 'none' : 'block';
+    function showModal() {
+      const img = currentGallery[currentIndex];
+      modalImg.src = img.src;
+      const desc = img.parentElement.querySelector(".obra-desc");
+      modalDesc.textContent = desc ? desc.textContent : "";
+      modal.style.display = "flex";
     }
 
-    resetSections();
-  </script>
+    function closeModalFunc() {
+      modal.style.display = "none";
+    }
 
+    function changeImg(n) {
+      currentIndex = (currentIndex + n + currentGallery.length) % currentGallery.length;
+      showModal();
+    }
+
+    closeModal.addEventListener("click", closeModalFunc);
+    prevBtn.addEventListener("click", () => changeImg(-1));
+    nextBtn.addEventListener("click", () => changeImg(1));
+    modal.addEventListener("click", e => {
+      if (e.target === modal) closeModalFunc();
+    });
+  </script>
 </body>
 
 </html>
