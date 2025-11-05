@@ -271,6 +271,21 @@
       display: block;
     }
 
+    .obra-video {
+      grid-column: span 2;
+      /* ocupa el espacio de dos columnas */
+    }
+
+    .obra-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      aspect-ratio: 2 / 1;
+      /* relación más panorámica, ajusta si quieres */
+      border-radius: 10px;
+    }
+
     /* ====== RESPONSIVE ====== */
     @media (max-width: 768px) {
       .logo-img {
@@ -365,31 +380,37 @@
   <section class="section" id="procesoDetalle">
     <div class="obras-grid">
       <div class="obra-card">
-        <img src="ImagenesProceso/Cupripennis.JPG" alt="Naturaleza">
+        <img src="ImagenesProceso\Cupripennis.JPG" alt="Naturaleza">
         <p class="obra-desc">Aglaeactis cupripennis, dibujo en rapidografo sobre
-        cartulina durex ,
-        Manizales 2025</p>
+          cartulina durex ,
+          Manizales 2025</p>
       </div>
       <div class="obra-card">
-        <img src="ImagenesProceso/Maculiventris.JPG" alt="Andrés Domínguez">
+        <img src="ImagenesProceso\Maculiventris.JPG" alt="Andrés Domínguez">
         <p class="obra-desc">Anolis maculiventris, dibujo en rapidografo sobre
-        cartulina durex , Manizales 2025.</p>
+          cartulina durex , Manizales 2025.</p>
       </div>
       <div class="obra-card">
         <img src="ImagenesProceso\penelope.JPG" alt="Naturaleza">
         <p class="obra-desc">Penelope montagni, dibujo en rapidografo sobre
-        cartulina durex , Manizales 2025</p>
+          cartulina durex , Manizales 2025</p>
       </div>
       <div class="obra-card">
         <img src="ImagenesProceso\prismantis.JPG" alt="Naturaleza">
         <p class="obra-desc">Pristimantis unistrigatus, dibujo en rapidografo sobre
-        cartulina durex ,
-        Manizales 2025</p>
+          cartulina durex ,
+          Manizales 2025</p>
       </div>
       <div class="obra-card">
         <img src="ImagenesProceso\CollageProceso.png" alt="Naturaleza">
         <p class="obra-desc">Collage a partir de las especies que habitan la región, Manizales 2025,
-        tomado del registro fotográfico</p>
+          tomado del registro fotográfico</p>
+      </div>
+      <div class="obra-card obra-video">
+        <video width="640" height="360" controls autoplay loop muted>
+          <source src="Animales-Elementos.mp4" type="video/mp4">
+          Tu navegador no soporta el formato de video.
+        </video>
       </div>
       <!-- 🔹 (Mantén todas tus imágenes originales aquí igual que en tu archivo) -->
     </div>
@@ -404,7 +425,7 @@
       <div class="obra-card">
         <img src="ImagenesPortafolio\DSC_0161.JPG" alt="Andrés Domínguez">
         <p class="obra-desc">Buteo, grabado en agua fuerte 20x20cm, Manizales
-        2025</p>
+          2025</p>
       </div>
       <div class="obra-card">
         <img src="ImagenesPortafolio\DSC_0153.JPG" alt="Pholis">
@@ -417,33 +438,33 @@
       <div class="obra-card">
         <img src="ImagenesPortafolio\DSCF0556.JPG" alt="Naturaleza">
         <p class="obra-desc">Mundo del fuego, linograbado 70*90cm, Manizales
-        2025</p>
+          2025</p>
       </div>
       <div class="obra-card">
         <img src="ImagenesPortafolio\DSCF0442.JPG" alt="Naturaleza">
         <p class="obra-desc">Mundo del aire, linograbado 70*90cm, Manizales
-        2025</p>
+          2025</p>
       </div>
       <div class="obra-card">
         <img src="ImagenesPortafolio\Identidad.png" alt="Naturaleza">
         <p class="obra-desc">Identidad, linograbado Digitalizado 55*35cm, Manizales
-        2025</p>
+          2025</p>
       </div>
       <div class="obra-card">
         <img src="ImagenesPortafolio\Encuentro.jpg" alt="Naturaleza">
         <p class="obra-desc">Encuentro, linograbado Digitalizado 55*55cm, Manizales
-        2025</p>
+          2025</p>
       </div>
       <div class="obra-card">
         <img src="ImagenesPortafolio\Renacer.jpg" alt="Naturaleza">
         <p class="obra-desc">Renacer, dibujo digital 35*55cm, Manizales
-        2025</p>
+          2025</p>
       </div>
       <div class="obra-card">
         <img src="ImagenesPortafolio\CantodelSapo.png" alt="Naturaleza">
         <p class="obra-desc">Canto de rana, fenaquitiscopio digital 55*55cm,
-        Manizales
-        2025</p>
+          Manizales
+          2025</p>
       </div>
     </div>
   </section>
@@ -453,18 +474,18 @@
       <div class="obra-card">
         <img src="ImagenesReferentes/jaguar-andres-domiguez.jpg" alt="Andrés Domínguez">
         <p class="obra-desc">Andres Dominguez, Jaguar Ambil, dibujo a base de
-        materiales organicos, 2015</p>
+          materiales organicos, 2015</p>
       </div>
       <div class="obra-card">
         <img src="ImagenesReferentes\werjayo-oso-jose-ismael-manco.jpg" alt="Andrés Domínguez">
         <p class="obra-desc">Jose Ismael Manco Parra, werjayo oso, dibujo en carbon
-        mineral sobre lienzo, 2010</p>
+          mineral sobre lienzo, 2010</p>
 
       </div>
       <div class="obra-card">
         <img src="ImagenesReferentes\Santamaria- pesces.jpg" alt="Naturaleza">
         <p class="obra-desc">Susana Santamaria, Pesces, Grabado en agua fuerte,
-        2022</p>
+          2022</p>
       </div>
       <div class="obra-card">
         <img src="ImagenesReferentes\smith_sojourn.jpg" alt="Naturaleza">
@@ -553,6 +574,9 @@
   </script>
 </body>
 
+</html>
+
 
 </html>
+
 
